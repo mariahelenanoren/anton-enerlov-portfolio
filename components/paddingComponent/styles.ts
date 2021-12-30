@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    height: 'auto',
+    width: '100%',
     maxWidth: 2000,
     margin: '0 auto 0 auto',
     padding: '0 8rem 0 8rem',
