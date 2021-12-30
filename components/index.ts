@@ -1,3 +1,4 @@
 import { PaddingComponent } from './paddingComponent';
+import { Header } from './header';
 
-export { PaddingComponent };
+export { PaddingComponent, Header };
