@@ -1,4 +1,4 @@
-export default function LifeStylePage() {
+export default function LifestylePage() {
 	return (
 		<div>
 			<p>Lifestyle Page</p>
