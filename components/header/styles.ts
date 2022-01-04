@@ -1,22 +1,27 @@
+import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme: Theme) => ({
+  appbar: {
+    flexGrow: 1,
+    backgroundColor: 'transparent',
+  },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '2rem 0',
+  },
   logoContainer: {
     position: 'relative',
     width: '3rem',
     height: '2rem',
   },
-  headerContainer: {
-    display: 'flex',
-    width: '100%',
-    padding: '2rem 0 2rem 0',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  link: {
+    fontSize: '0.9rem',
+    marginLeft: '3rem',
+    color: theme.palette.common.white,
   },
-  menu: {
-    display: 'flex',
-    '& li': {
-      marginLeft: '1rem',
-    },
+  active: {
+    fontWeight: 600,
   },
 }));

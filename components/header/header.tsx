@@ -1,39 +1,72 @@
-import { Link } from '@mui/material';
+import React from 'react';
+import { Link, Box, AppBar, Toolbar } from '@mui/material';
+import classNames from 'classnames';
 import Image from 'next/image';
 import { PaddingComponent } from '..';
 import { useStyles } from './styles';
+import { useRouter } from 'next/router';
 
 export default function Header() {
   const classes = useStyles();
+  const router = useRouter();
+
+  const checkIfCurrentPage = (href: string) => {
+    if (router.pathname === href) {
+      return true;
+    }
+    return false;
+  };
+
+  const pages = [
+    {
+      title: 'Outdoor',
+      href: '/',
+    },
+    {
+      title: 'Lifestyle',
+      href: '/lifestyle',
+    },
+    {
+      title: 'About',
+      href: '/about',
+    },
+    {
+      title: 'Contact',
+      href: '/contact',
+    },
+  ];
 
   return (
     <PaddingComponent>
-      <div className={classes.headerContainer}>
-        <div className={classes.logoContainer}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            alt="logotype"
-            src="/assets/logo-cropped.png"
-          ></Image>
-        </div>
-        <nav>
-          <ul className={classes.menu}>
-            <li>
-              <Link href="/">Outdoor</Link>
-            </li>
-            <li>
-              <Link href="/lifestyle">Lifestyle</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Box>
+        <AppBar position="relative" className={classes.appbar}>
+          <Toolbar className={classes.toolbar}>
+            <div className={classes.logoContainer}>
+              <Image
+                layout="fill"
+                objectFit="contain"
+                alt="logotype"
+                src="/assets/logo-cropped.png"
+              ></Image>
+            </div>
+            <div>
+              {pages.map((page, index) => (
+                <Link
+                  underline="none"
+                  href={page.href}
+                  className={classNames(
+                    classes.link,
+                    checkIfCurrentPage(page.href) ? classes.active : undefined
+                  )}
+                  key={index}
+                >
+                  {page.title}
+                </Link>
+              ))}
+            </div>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </PaddingComponent>
   );
 }
