@@ -31,11 +31,20 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   overlay: {
     position: 'absolute',
-    backgroundColor: 'rgba(0, 0, 0, 0.49)',
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
     top: '-6rem',
     right: 0,
     left: 0,
     bottom: 0,
+  },
+  gradient: {
+    position: 'absolute',
+    background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))',
+    right: 0,
+    left: 0,
+    bottom: 0,
+    height: '5rem',
+    zIndex: 5,
   },
   contentContainer: {
     display: 'flex',
@@ -46,6 +55,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: '100%',
   },
   iconContainer: {
+    marginTop: '1rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

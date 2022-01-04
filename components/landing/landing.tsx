@@ -18,6 +18,7 @@ export default function Landing({ landing }: ILanding) {
           />
         </div>
         <div className={classes.overlay}></div>
+        <div className={classes.gradient}></div>
         <div className={classes.contentContainer}>
           <PaddingComponent>
             <Grid container spacing={2} direction={'column'}>
