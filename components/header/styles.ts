@@ -17,7 +17,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: '2rem',
   },
   link: {
-    fontSize: '0.9rem',
     marginLeft: '3rem',
     color: theme.palette.common.white,
   },
