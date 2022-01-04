@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     left: 0,
   },
   relative: {
-    height: '40rem',
+    height: 'calc(100vh - 10rem)',
     position: 'relative',
   },
   imageContainer: {
@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   gradient: {
     position: 'absolute',
-    background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))',
+    background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1))',
     right: 0,
     left: 0,
     bottom: 0,
