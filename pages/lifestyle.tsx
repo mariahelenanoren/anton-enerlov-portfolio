@@ -1,13 +1,18 @@
-export default function LifestylePage() {
-	return (
-		<div>
-			<p>Lifestyle Page</p>
-		</div>
-	);
+import { Landing } from '../components';
+import { getLandingData } from '../lib/gql';
+import { ILanding } from '../lib/gql/landing';
+
+export default function LifestylePage({ landing }: ILanding) {
+  return (
+    <>
+      <Landing landing={landing} />
+    </>
+  );
 }
 
 export async function getStaticProps() {
-	return {
-		props: {},
-	};
+  const { landing } = await getLandingData();
+  return {
+    props: { landing },
+  };
 }

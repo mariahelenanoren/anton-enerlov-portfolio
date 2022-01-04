@@ -5,6 +5,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
   appbar: {
     flexGrow: 1,
     backgroundColor: 'transparent',
+    zIndex: 100,
+    boxShadow: 'none',
   },
   toolbar: {
     display: 'flex',
