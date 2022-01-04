@@ -1,3 +1,4 @@
 import getLandingData from './getLandingData';
+import { ILanding } from './types';
 
-export { getLandingData };
+export { getLandingData, type ILanding };
