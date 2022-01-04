@@ -9,8 +9,8 @@ import { useStyles } from './styles';
 export default function Landing({ landing }: ILanding) {
   const classes = useStyles();
   return (
-    <div className={classes.relative}>
-      <div className={classes.absolute}>
+    <div className={classes.landingContainer}>
+      <div className={classes.landingInner}>
         <div className={classes.imageContainer}>
           <Image
             data={landing.backgroundImage.responsiveImage}

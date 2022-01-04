@@ -2,14 +2,14 @@ import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-  absolute: {
+  landingInner: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
   },
-  relative: {
+  landingContainer: {
     height: 'calc(100vh - 10rem)',
     position: 'relative',
   },
