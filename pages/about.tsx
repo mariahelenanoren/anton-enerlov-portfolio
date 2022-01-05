@@ -1,17 +1,15 @@
-import { getFooterData } from '../lib/gql';
+import { About } from '../layout/about';
+import { getAboutPageData, getFooterData, IAboutPage } from '../lib/gql';
 
-export default function AboutPage() {
-  return (
-    <div>
-      <p>About page</p>
-    </div>
-  );
+export default function AboutPage({ aboutPage }: IAboutPage) {
+  return <About aboutPage={aboutPage} />;
 }
 
 export async function getStaticProps() {
   const { footer } = await getFooterData();
+  const { aboutPage } = await getAboutPageData();
 
   return {
-    props: { footer },
+    props: { footer, aboutPage },
   };
 }
