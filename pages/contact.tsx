@@ -1,17 +1,20 @@
+import Contact from "../components/contact/contact";
+import { IContact } from "../components/contact/types";
+import { getContactData } from "../lib/gql/contact";
 import { getFooterData } from '../lib/gql';
 
-export default function Contact() {
+export default function ContactPage({contactPage}: IContact) {
+
   return (
-    <div>
-      <p>Contact page</p>
-    </div>
-  );
+      <Contact contactPage={contactPage}/>  
+  )
 }
 
 export async function getStaticProps() {
+  const { contactPage } = await getContactData();
   const { footer } = await getFooterData();
 
   return {
-    props: { footer },
+    props: { contactPage, footer },
   };
 }
