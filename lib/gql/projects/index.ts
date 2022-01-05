@@ -1,3 +1,4 @@
 import getProjectsData from './getProjectsData';
+import { IProjects } from './types';
 
-export { getProjectsData };
+export { getProjectsData, type IProjects };
