@@ -19,7 +19,6 @@ export default function OutdoorPage({
     <>
       <Landing landing={landing} />
       <Grid allProjects={allProjects} />
-      <Footer footer={footer} />
     </>
   );
 }

@@ -7,7 +7,7 @@ import { Layout } from '../layout/layout';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout footer={pageProps.footer}>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
