@@ -1,5 +1,4 @@
-import { Landing } from '../components';
-import Grid from '../components/grid/grid';
+import { Landing, Grid } from '../components';
 import { getLandingData, getProjectsData, IProjects } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing';
 

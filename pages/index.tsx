@@ -1,6 +1,5 @@
-import { Landing, Footer } from '../components';
+import { Landing, Footer, Grid } from '../components';
 import { IFooter } from '../components/footer/types';
-import Grid from '../components/grid/grid';
 import {
   getLandingData,
   getFooterData,
