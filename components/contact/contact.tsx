@@ -12,8 +12,8 @@ export default function Contact({contactPage}: IContact) {
     return (
         <>
         <PaddingComponent>
+         <p className={classes.contactTitle}>{contactPage.title}</p>
             <div className={classes.contactContainer}>
-                <p>{contactPage.title}</p>
                 <Box>
                     <StructuredText data={contactPage.body.value} />
                 </Box>
