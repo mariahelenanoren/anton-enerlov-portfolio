@@ -1,5 +1,5 @@
 import { Landing } from '../components';
-import { getLandingData } from '../lib/gql';
+import { getFooterData, getLandingData } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing';
 
 export default function LifestylePage({ landing }: ILanding) {
@@ -12,7 +12,9 @@ export default function LifestylePage({ landing }: ILanding) {
 
 export async function getStaticProps() {
   const { landing } = await getLandingData();
+  const { footer } = await getFooterData();
+
   return {
-    props: { landing },
+    props: { landing, footer },
   };
 }

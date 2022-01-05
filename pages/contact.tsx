@@ -1,3 +1,5 @@
+import { getFooterData } from '../lib/gql';
+
 export default function Contact() {
   return (
     <div>
@@ -7,7 +9,9 @@ export default function Contact() {
 }
 
 export async function getStaticProps() {
+  const { footer } = await getFooterData();
+
   return {
-    props: {},
+    props: { footer },
   };
 }
