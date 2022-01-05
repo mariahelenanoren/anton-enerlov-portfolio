@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme:Theme) => ({
         textAlign: 'center',
         fontSize: '45px',
         fontWeight: 'bold',
-        // marignTop: '8rem',
     },
 
     contactContainer: {
