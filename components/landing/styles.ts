@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     left: 0,
   },
   landingContainer: {
-    height: 'calc(100vh - 10rem)',
+    height: '100vh',
     position: 'relative',
   },
   imageContainer: {
@@ -43,10 +43,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
     right: 0,
     left: 0,
     bottom: 0,
-    height: '5rem',
+    height: '10rem',
     zIndex: 5,
   },
   contentContainer: {
+    marginTop: '-6rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
