@@ -1,5 +1,5 @@
 import { Landing } from '../components';
-import { getLandingData } from '../lib/gql';
+import { getLandingData, getProjectsData } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing/types';
 
 export default function OutdoorPage({ landing }: ILanding) {
@@ -12,6 +12,7 @@ export default function OutdoorPage({ landing }: ILanding) {
 
 export async function getStaticProps() {
   const { landing } = await getLandingData();
+  const { allProjects } = await getProjectsData('Outdoor');
 
   return {
     props: { landing },
