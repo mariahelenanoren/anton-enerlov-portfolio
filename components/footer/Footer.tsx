@@ -27,8 +27,10 @@ export default function Footer({ footer }: IFooter) {
 				</div>
 				{footer.socialLinks.map((link, index) => (
 					<Link key={index} href={link.link}>
-						<div className={classes.socialIcons}>
+						<div className={classes.iconsContainer}>
+							
 							<DatoImage data={link.icon.responsiveImage}></DatoImage>
+						
 						</div>
 					</Link>
 				))}
