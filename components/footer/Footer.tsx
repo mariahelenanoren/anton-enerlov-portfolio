@@ -18,6 +18,7 @@ export default function Footer({ footer }: IFooter) {
 	return (
 		<PaddingComponent>
 			<div className={classes.footer}>
+				<section className={classes.column}>
 				<div className={classes.logo}>
 					<Image
 						layout="fill"
@@ -25,16 +26,19 @@ export default function Footer({ footer }: IFooter) {
 						alt="logotype"
 					></Image>
 				</div>
+
+				</section>
+				<div className={classes.iconsContainer}>
 				{footer.socialLinks.map((link, index) => (
 					<Link key={index} href={link.link}>
-						<div className={classes.iconsContainer}>
-							
-							<DatoImage data={link.icon.responsiveImage}></DatoImage>
+							<DatoImage data={link.icon.responsiveImage}className={classes.socialIcons}></DatoImage>
 						
-						</div>
 					</Link>
-				))}
-				;<span className={classes.copyName}>&copy; Anton Enerlöv {date}</span>
+				))};
+				</div>
+				<section className={classes.column}>
+					<span className={classes.copyName}>&copy; Anton Enerlöv {date}</span>
+				</section>
 			</div>
 		</PaddingComponent>
 	);
