@@ -7,14 +7,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignContent: 'center',
     justifyContent: 'center',
-    padding: '6rem 0',
+    padding: '8rem 0',
     textAlign: 'center',
   },
   textContainer: {
-    marginTop: '4rem',
+    marginTop: '6rem',
   },
   videoContainer: {
-    margin: '8rem 0',
+    marginTop: '8rem',
     position: 'relative',
     paddingBottom: '56.25%',
   },

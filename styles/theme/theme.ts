@@ -66,16 +66,16 @@ export const theme = createTheme({
     },
     body1: {
       fontSize: 16,
+      lineHeight: '170%',
       '@media (max-width: 600px)': {
         fontSize: 14,
-        lineHeight: '150%',
       },
     },
     body2: {
       fontSize: 14,
+      lineHeight: '170%',
       '@media (max-width: 600px)': {
         fontSize: 12,
-        lineHeight: '150%',
       },
     },
   },
