@@ -1,20 +1,27 @@
-import { Footer } from "../components/footer";
-import { IFooter } from "../components/footer/types";
-import { getFooterData } from "../lib/gql/footer/getFooterData";
+import { Landing, Footer } from '../components';
+import { IFooter } from '../components/footer/types';
+import { getLandingData , getFooterData} from '../lib/gql';
+import { ILanding } from '../lib/gql/landing/types';
 
-export default function OutdoorPage({footer}: IFooter) {
-	console.log(footer)
-	return (
-		<div>
-			<p>Outdoor page</p>
-			<Footer footer={footer}/>
-		</div>
-	);
+
+interface IOutdoorPage extends ILanding, IFooter {
+
+}
+
+export default function OutdoorPage({ landing, footer }: IOutdoorPage) {
+  return (
+    <>
+      <Landing landing={landing} />
+	  <Footer footer={footer}/>
+    </>
+  );
 }
 
 export async function getStaticProps() {
-	const { footer } = await getFooterData()
-	return {
-		props: {footer},
-	};
+  const { landing } = await getLandingData();
+  const {footer} = await getFooterData();
+
+  return {
+    props: { landing, footer },
+  };
 }

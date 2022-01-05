@@ -34,7 +34,7 @@ export default function Footer({ footer }: IFooter) {
 							<DatoImage data={link.icon.responsiveImage}className={classes.socialIcons}></DatoImage>
 						
 					</Link>
-				))};
+				))}
 				</div>
 				<section className={classes.column}>
 					<span className={classes.copyName}>&copy; Anton Enerlöv {date}</span>

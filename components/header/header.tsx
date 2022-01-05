@@ -52,6 +52,7 @@ export default function Header() {
             <div>
               {pages.map((page, index) => (
                 <Link
+                  variant="body2"
                   underline="none"
                   href={page.href}
                   className={classNames(
