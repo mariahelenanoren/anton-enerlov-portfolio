@@ -8,6 +8,7 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
     <>
       <Header />
       <main className={classes.main}>{children}</main>
+
     </>
   );
 }
