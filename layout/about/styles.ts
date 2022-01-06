@@ -12,6 +12,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   textContainer: {
     marginTop: '6rem',
+    fontSize: 16,
+    lineHeight: '170%',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: 14,
+    },
   },
   videoContainer: {
     marginTop: '8rem',
