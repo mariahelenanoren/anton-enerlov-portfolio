@@ -14,5 +14,10 @@ export interface IAboutPage {
     body: {
       value: StructuredTextDocument;
     };
+    clientTitle: string;
+    clientCategory: string;
+    clients: {
+      name: string;
+    }[];
   };
 }

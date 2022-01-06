@@ -4,5 +4,14 @@ import { Header } from './header';
 import { Landing } from './landing';
 import { Footer } from './footer';
 import { Grid } from './grid';
+import { SelectedClients } from './selectedClients';
 
-export { PaddingComponent, Header, Footer, Landing, Grid, TextContainer };
+export {
+  PaddingComponent,
+  Header,
+  Footer,
+  Landing,
+  Grid,
+  TextContainer,
+  SelectedClients,
+};

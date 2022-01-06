@@ -16,6 +16,11 @@ export const ABOUTPAGE_QUERY = gql`
       body {
         value
       }
+      clientTitle
+      clientCategory
+      clients {
+        name
+      }
     }
   }
 `;
