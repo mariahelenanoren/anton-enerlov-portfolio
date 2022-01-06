@@ -5,7 +5,7 @@ export interface ILanding {
     title: string;
     subtitle: string;
     socialLinks: ILink[];
-    backgroundImage: {
+    backgroundImage?: {
       responsiveImage: ResponsiveImageType;
     };
   };
