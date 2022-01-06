@@ -17,9 +17,7 @@ export default function About({ aboutPage }: IAboutPage) {
         <Typography variant="h1">{aboutPage.title}</Typography>
         <TextContainer>
           <div className={classes.textContainer}>
-            <Typography variant="body1">
-              <StructuredText data={aboutPage.body.value} />
-            </Typography>
+            <StructuredText data={aboutPage.body.value} />
           </div>
         </TextContainer>
         <div className={classes.videoContainer}>
