@@ -1,5 +1,6 @@
 import { Masonry } from '@mui/lab';
 import { Paper, Typography } from '@mui/material';
+import Link from 'next/link';
 import { Image } from 'react-datocms';
 import { IProjects } from '../../lib/gql';
 import { PaddingComponent } from '../paddingComponent';
@@ -13,7 +14,8 @@ export default function Grid({ allProjects }: IProjects) {
       <div className={classes.mansonryContainer}>
         <Masonry columns={2} spacing={2}>
           {allProjects.map((project, index) => (
-            <div key={index} className={classes.imageContainer}>
+            <Link key={index} href={project.id} passHref>
+            <div className={classes.imageContainer}>
               <Image data={project.featuredImage.responsiveImage} />
               <div className={classes.overlay}>
                 <Typography className={classes.text} variant="h4">
@@ -21,6 +23,8 @@ export default function Grid({ allProjects }: IProjects) {
                 </Typography>
               </div>
             </div>
+         
+            </Link>
           ))}
         </Masonry>
       </div>

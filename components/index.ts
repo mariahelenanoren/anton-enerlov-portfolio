@@ -5,6 +5,7 @@ import { Landing } from './landing';
 import { Footer } from './footer';
 import { Grid } from './grid';
 import { SelectedClients } from './selectedClients';
+import { ProjectTextContainer } from './projectTextContainer';
 import { Loader } from './loader';
 
 export {
@@ -15,5 +16,6 @@ export {
   Grid,
   TextContainer,
   SelectedClients,
+  ProjectTextContainer,
   Loader,
 };

@@ -1,7 +1,7 @@
 import { ResponsiveImageType } from 'react-datocms';
 
-export interface IProjects {
-  allProjects: {
+export interface IProject {
+    project: {
     id: string;
     title: string;
     categoryTitle: string;
@@ -29,5 +29,5 @@ export interface IProjects {
     retouch: {
       name?: string;
     };
-  }[];
+  };
 }
