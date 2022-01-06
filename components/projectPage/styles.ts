@@ -2,11 +2,28 @@ import { Theme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme:Theme) => ({
-    featuredImageContainer: {
+    projectContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
 
     },
 
-    projectInfoContainer: {
-
+    titleContainer: {
+        padding: '8rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
     },
+
+    category: {
+        fontSize: '12px',
+        textTransform: 'uppercase', 
+    },
+
+    firstImage: {
+
+    }
 }));

@@ -1,13 +1,16 @@
 import { getFooterData, getProjectData, IProjects } from "../lib/gql";
 import { getProjectsData } from "../lib/gql";
+import { IProject } from "../lib/gql/project/types";
+import { ProjectPage as Project } from "../components/projectPage";
 
 
 
-export default function ProjectPage() {
+export default function ProjectPage({project}: IProject) {
+  // console.log(project)
     return (
-        <div>
-            
-        </div>
+      
+      <Project project={project} />
+    
     )
 }
 
@@ -15,9 +18,10 @@ export async function getStaticProps(context: any) {
     const { footer } = await getFooterData();
     const id = context.params.id.toString();
     const { allProjects } = await getProjectData(id);
-    console.log(allProjects)
+    const project = allProjects[0];
+    // console.log(project)
     return {
-      props: { footer },
+      props: { footer , project},
     };
   }
   
