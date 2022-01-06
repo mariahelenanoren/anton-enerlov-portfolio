@@ -34,6 +34,7 @@ export const theme = createTheme({
       '@media (max-width: 600px)': {
         fontSize: 24,
       },
+      fontWeight: 700,
     },
     h3: {
       fontSize: 28,
@@ -61,8 +62,9 @@ export const theme = createTheme({
       '@media (max-width: 600px)': {
         fontSize: 10,
       },
-      color: '#D9D9D9',
+      color: '#A8A8A8',
       textTransform: 'uppercase',
+      letterSpacing: 1.5,
     },
     body1: {
       fontSize: 16,

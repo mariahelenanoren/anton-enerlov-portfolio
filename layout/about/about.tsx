@@ -1,6 +1,10 @@
 import { Typography } from '@mui/material';
 import { StructuredText } from 'react-datocms';
-import { PaddingComponent, TextContainer } from '../../components';
+import {
+  PaddingComponent,
+  SelectedClients,
+  TextContainer,
+} from '../../components';
 import { IAboutPage } from '../../lib/gql';
 import { useStyles } from './styles';
 
@@ -28,6 +32,11 @@ export default function About({ aboutPage }: IAboutPage) {
             allowFullScreen
           ></iframe>
         </div>
+        <SelectedClients
+          clientTitle={aboutPage.clientTitle}
+          clientCategory={aboutPage.clientCategory}
+          clients={aboutPage.clients}
+        />
       </div>
     </PaddingComponent>
   );
