@@ -3,6 +3,7 @@ import { IProject } from "../../lib/gql/project/types";
 import { PaddingComponent } from "../paddingComponent";
 import { useStyles } from "./styles";
 import { Image } from 'react-datocms';
+import { ProjectTextContainer } from "../projectTextContainer";
 
 export default function ProjectPage({project}: IProject) {
 	const classes = useStyles();
@@ -11,7 +12,7 @@ export default function ProjectPage({project}: IProject) {
 		<PaddingComponent>
                 <div className={classes.titleContainer}>
                 <p className={classes.category}>{project.categoryTitle}</p>
-                    <Typography variant="h3" textAlign={'center'}>
+                    <Typography variant="h2" textAlign={'center'}>
                         {project.title}
                     </Typography>
                 </div>
@@ -22,10 +23,13 @@ export default function ProjectPage({project}: IProject) {
                       className={classes.firstImage}
                     />
               </Grid>
+             <ProjectTextContainer>
+               
+             </ProjectTextContainer>
 
        
             
             </div>
 	);
-    console.log(project.title)
+
 }
