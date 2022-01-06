@@ -12,10 +12,12 @@ export default function Landing({ landing }: ILanding) {
     <div className={classes.landingContainer}>
       <div className={classes.landingInner}>
         <div className={classes.imageContainer}>
-          <Image
-            data={landing.backgroundImage.responsiveImage}
-            className={classes.image}
-          />
+          {landing.backgroundImage ? (
+            <Image
+              data={landing.backgroundImage.responsiveImage}
+              className={classes.image}
+            />
+          ) : null}
         </div>
         <div className={classes.overlay}></div>
         <div className={classes.gradient}></div>
