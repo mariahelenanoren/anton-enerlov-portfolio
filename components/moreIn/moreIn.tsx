@@ -4,16 +4,17 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Image } from 'react-datocms';
 import { PaddingComponent } from '..';
-import { IProjects } from '../../lib/gql';
+import { IProject } from '../../lib/gql/project/types';
 import { useStyles } from './styles';
 
-interface IMoreIn extends IProjects {
+interface IMoreIn {
+  allProjects: IProject[];
   id: string;
 }
 
 export default function MoreIn({ allProjects, id }: IMoreIn) {
   const classes = useStyles();
-  const [suggestedProjects, setSuggestedProjects] = useState<any[]>([]);
+  const [suggestedProjects, setSuggestedProjects] = useState<IProject[]>([]);
 
   useEffect(() => {
     const filteredProjects = allProjects.filter((project) => project.id !== id);
