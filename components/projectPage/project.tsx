@@ -25,10 +25,14 @@ export default function ProjectPage({project}: IProject) {
               </Grid>
              <ProjectTextContainer>
                
-             </ProjectTextContainer>
+              <div>
+               {project.client.name} 
+               {project.productionCompany.name}
+              </div>  
+               
+              
 
-       
-            
+             </ProjectTextContainer> 
             </div>
 	);
 

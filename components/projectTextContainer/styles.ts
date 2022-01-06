@@ -6,6 +6,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     projectInfoContiner: {
         width: '100%',
         height: '20rem',
+        padding: '10rem',
+      
+   
     }
 
 }));
