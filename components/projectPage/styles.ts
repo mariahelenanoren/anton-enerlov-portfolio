@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme:Theme) => ({
 
     },
 
-    projectInfo: {
+    projectInfoContainer: {
 
     },
 }));

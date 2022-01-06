@@ -2,6 +2,7 @@ import { ResponsiveImageType } from 'react-datocms';
 
 export interface IProjects {
   allProjects: {
+    id: string;
     title: string;
     categoryTitle: string;
     featuredImage: {

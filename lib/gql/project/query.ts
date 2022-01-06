@@ -1,8 +1,8 @@
-import { gql } from 'graphql-request';
+import { gql } from "graphql-request";
 
-export const PROJECTS_QUERY = gql`
-  query GetProjects($category: String) {
-    allProjects(filter: { categoryTitle: { eq: $category } }) {
+export const PROJECT_QUERY = gql`
+query GetProject($id: ItemId!) {
+    allProjects(filter: { id: { eq: $id } }) {
       id
       title
       categoryTitle
@@ -56,4 +56,5 @@ export const PROJECTS_QUERY = gql`
       }
     }
   }
-`;
+
+`
