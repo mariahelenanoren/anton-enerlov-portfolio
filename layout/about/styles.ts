@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignContent: 'center',
     justifyContent: 'center',
-    padding: '8rem 0',
+    marginTop: '8rem',
     textAlign: 'center',
   },
   textContainer: {
