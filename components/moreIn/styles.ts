@@ -5,20 +5,31 @@ export const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {
     textAlign: 'center',
   },
-  grid: {
+  itemContent: {
     position: 'relative',
+    width: '100%',
+    height: '20rem',
+    '& img': {
+      transition: 'transform 0.5s !important',
+    },
+    '&:hover': {
+      '& img': {
+        transform: 'scale(1.1)',
+      },
+    },
   },
   title: {
     marginBottom: '4rem',
   },
   image: {
+    height: '100%',
     width: '100%',
-    height: '20rem',
     '& img': {
       objectFit: 'cover',
       objectPosition: 'center',
     },
   },
+  item: {},
   overlay: {
     position: 'absolute',
     display: 'flex',
@@ -30,5 +41,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
     left: 0,
     backgroundColor: 'rgb(0,0,0,0.4)',
     textTransform: 'uppercase',
+    transition: 'background 0.5s',
+
+    '&:hover': {
+      backgroundColor: 'rgb(0,0,0,0.6)',
+    },
   },
 }));

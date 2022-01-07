@@ -36,13 +36,15 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
             <Grid container direction="row" spacing={3}>
               {suggestedProjects.map((project, index) => (
                 <Link key={index} href={project.id} passHref>
-                  <Grid item xs={4} className={classes.grid}>
-                    <Image
-                      className={classes.image}
-                      data={project.featuredImage.responsiveImage}
-                    />
-                    <div className={classes.overlay}>
-                      <Typography variant="h4">{project.title}</Typography>
+                  <Grid item xs={4} className={classes.item}>
+                    <div className={classes.itemContent}>
+                      <Image
+                        className={classNames(classes.image, 'image')}
+                        data={project.featuredImage.responsiveImage}
+                      />
+                      <div className={classes.overlay}>
+                        <Typography variant="h4">{project.title}</Typography>
+                      </div>
                     </div>
                   </Grid>
                 </Link>
