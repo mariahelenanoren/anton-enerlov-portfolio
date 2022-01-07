@@ -8,8 +8,11 @@ import { ProjectPage as Project } from "../components/projectPage";
 export default function ProjectPage({project}: IProject) {
   // console.log(project)
     return (
-      
+      <>
+      {project ?
       <Project project={project} />
+     : null}
+      </>
     
     )
 }

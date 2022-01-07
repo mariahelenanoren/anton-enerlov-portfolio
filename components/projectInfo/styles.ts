@@ -3,8 +3,12 @@ import { makeStyles } from "@mui/styles";
 
 
 export const useStyles = makeStyles((theme:Theme) => ({
-    information: {
-        
+   infoContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: '4rem',
+
     }
     
 }));

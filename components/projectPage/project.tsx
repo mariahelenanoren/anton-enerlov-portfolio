@@ -4,9 +4,11 @@ import { PaddingComponent } from "../paddingComponent";
 import { useStyles } from "./styles";
 import { Image } from 'react-datocms';
 import { ProjectTextContainer } from "../projectTextContainer";
+import { ProjectInfo } from "../projectInfo";
 
 export default function ProjectPage({project}: IProject) {
 	const classes = useStyles();
+
 	return (
     <div className={classes.projectContainer}>
 		<PaddingComponent>
@@ -24,14 +26,14 @@ export default function ProjectPage({project}: IProject) {
                     />
               </Grid>
              <ProjectTextContainer>
-               
-              <div>
-               {project.client.name} 
-               {project.productionCompany.name}
-              </div>  
-               
-              
-
+                    <ProjectInfo 
+                       client={project.client}
+                       productionCompany={project.productionCompany}
+                       model={project.model}
+                       producer={project.producer}
+                       agency={project.agency}
+                       retouch={project.retouch}
+                    />                
              </ProjectTextContainer> 
             </div>
 	);
