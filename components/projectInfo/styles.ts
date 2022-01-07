@@ -1,15 +1,13 @@
-import { Theme } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { Theme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
+export const useStyles = makeStyles((theme: Theme) => ({
+	infoContainer: {},
 
-export const useStyles = makeStyles((theme:Theme) => ({
-   infoContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: '4rem',
-
-    }
-    
+	text: {
+		marginTop: '2rem',
+		display: 'flex',
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+	},
 }));
-
