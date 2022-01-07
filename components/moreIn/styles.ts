@@ -29,22 +29,24 @@ export const useStyles = makeStyles((theme: Theme) => ({
       objectPosition: 'center',
     },
   },
-  item: {},
   overlay: {
     position: 'absolute',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    cursor: 'pointer',
     top: 0,
     bottom: 0,
     right: 0,
     left: 0,
     backgroundColor: 'rgb(0,0,0,0.4)',
-    textTransform: 'uppercase',
     transition: 'background 0.5s',
-
     '&:hover': {
       backgroundColor: 'rgb(0,0,0,0.6)',
     },
+  },
+  projectTitle: {
+    fontWeight: 500,
+    textTransform: 'uppercase',
   },
 }));
