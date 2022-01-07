@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "prettier.singleQuote": true,
+    "eslint.format.enable": true,
+    "eslint.packageManager": "npm",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.alwaysShowStatus": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDelete": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.wordWrap": "on",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "eslint.validate": [
+    
+    ],
+    "workbench.editor.untitled.hint": "hidden",
+    "window.zoomLevel": -1,
+    "git.confirmSync": false
+}

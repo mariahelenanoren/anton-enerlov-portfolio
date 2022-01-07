@@ -5,7 +5,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   mansonryContainer: {
     position: 'relative',
     marginTop: '-10rem',
-    marginBottom: '10rem',
     zIndex: '150',
   },
   imageContainer: {
