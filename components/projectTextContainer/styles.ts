@@ -4,11 +4,12 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme: Theme) => ({
     projectInfoContiner: {
-        width: '100%',
-        height: '20rem',
-        padding: '10rem',
-      
-   
+        marginTop: '8rem',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+
     }
 
 }));

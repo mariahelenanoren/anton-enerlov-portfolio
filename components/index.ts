@@ -7,6 +7,8 @@ import { Grid } from './grid';
 import { SelectedClients } from './selectedClients';
 import { ProjectTextContainer } from './projectTextContainer';
 import { Loader } from './loader';
+import { ProjectInfo } from './projectInfo';
+import { ProjectPage } from './projectPage';
 
 export {
   PaddingComponent,
@@ -18,4 +20,6 @@ export {
   SelectedClients,
   ProjectTextContainer,
   Loader,
+  ProjectInfo,
+  ProjectPage,
 };

@@ -27,7 +27,8 @@ export const useStyles = makeStyles((theme:Theme) => ({
 
     },
 
-    text: {
-        
+    information: {
+
+  
     }
 }));

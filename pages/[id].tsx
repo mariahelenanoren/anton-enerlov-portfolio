@@ -12,7 +12,11 @@ export default function ProjectPage({
   project: IProject;
   allProjects: IProject[];
 }) {
-  return <Project project={project} allProjects={allProjects} />;
+  return (
+    <>
+      {project ? <Project allProjects={allProjects} project={project} /> : null}
+    </>
+  );
 }
 
 export async function getStaticProps(context: any) {
