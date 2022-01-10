@@ -6,7 +6,6 @@ import { Footer } from './footer';
 import { Grid } from './grid';
 import { SelectedClients } from './selectedClients';
 import { Loader } from './loader';
-import { MobileMenu } from './mobileMenu';
 
 export {
   PaddingComponent,
@@ -17,5 +16,4 @@ export {
   TextContainer,
   SelectedClients,
   Loader,
-  MobileMenu,
 };

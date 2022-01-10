@@ -1,25 +1,15 @@
 import React, { useState } from 'react';
-import {
-  Link,
-  Box,
-  AppBar,
-  Toolbar,
-  Theme,
-  useMediaQuery,
-} from '@mui/material';
-import classNames from 'classnames';
-import Image from 'next/image';
-import { MobileMenu, PaddingComponent } from '..';
-import { useStyles } from './styles';
-import { useRouter } from 'next/router';
 import { useTheme } from '@mui/styles';
+import { Box, AppBar, Toolbar, Theme, useMediaQuery } from '@mui/material';
+import Image from 'next/image';
+import { PaddingComponent } from '../paddingComponent';
 import { ISocialLinks } from './types';
-import { checkIfCurrentPage } from '../../lib/helpers/checkIfCurrentPage';
+import { useStyles } from './styles';
+import { DesktopMenu, MobileMenu } from '../menu';
 
 export default function Header({ socialLinks }: ISocialLinks) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const classes = useStyles();
-  const router = useRouter();
   const theme: Theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));
 
@@ -44,49 +34,30 @@ export default function Header({ socialLinks }: ISocialLinks) {
 
   return (
     <PaddingComponent>
-      <Box>
-        <AppBar position="relative" className={classes.appbar}>
-          <Toolbar className={classes.toolbar}>
-            <div className={classes.logoContainer}>
-              <Image
-                layout="fill"
-                objectFit="contain"
-                alt="logotype"
-                src="/assets/logo-cropped.png"
-              ></Image>
-            </div>
-            <div>
-              {!mobile ? (
-                <>
-                  {pages.map((page, index) => (
-                    <Link
-                      variant="body2"
-                      underline="none"
-                      href={page.href}
-                      className={classNames(
-                        classes.link,
-                        checkIfCurrentPage(page.href, router.pathname)
-                          ? classes.active
-                          : undefined
-                      )}
-                      key={index}
-                    >
-                      {page.title}
-                    </Link>
-                  ))}
-                </>
-              ) : (
-                <MobileMenu
-                  socialLinks={socialLinks}
-                  pages={pages}
-                  isOpen={isOpen}
-                  setIsOpen={setIsOpen}
-                />
-              )}
-            </div>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <AppBar position="relative" className={classes.appbar}>
+        <Toolbar className={classes.toolbar}>
+          <div className={classes.logoContainer}>
+            <Image
+              layout="fill"
+              objectFit="contain"
+              alt="logotype"
+              src="/assets/logo-cropped.png"
+            ></Image>
+          </div>
+          <div>
+            {!mobile ? (
+              <DesktopMenu pages={pages} />
+            ) : (
+              <MobileMenu
+                socialLinks={socialLinks}
+                pages={pages}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+              />
+            )}
+          </div>
+        </Toolbar>
+      </AppBar>
     </PaddingComponent>
   );
 }

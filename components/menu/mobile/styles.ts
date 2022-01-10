@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 export const useStyles = makeStyles((theme: Theme) => ({
   modal: {
     transition: 'opacity 0.3s',
-    backgroundColor: 'rgb(0,0,0,0.8)',
+    backgroundColor: 'rgb(0,0,0,0.75)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

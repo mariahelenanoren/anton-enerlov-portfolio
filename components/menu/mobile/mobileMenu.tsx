@@ -2,20 +2,11 @@ import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton, Link, Modal } from '@mui/material';
 import { useRouter } from 'next/router';
-import { checkIfCurrentPage } from '../../lib/helpers/checkIfCurrentPage';
 import classNames from 'classnames';
 import { useStyles } from './styles';
-import { ISocialLinks } from '../header/types';
 import { Image } from 'react-datocms';
-
-interface IMobileMenu extends ISocialLinks {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isOpen: boolean;
-  pages: {
-    title: string;
-    href: string;
-  }[];
-}
+import { IMobileMenu } from './types';
+import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
 
 export default function MobileMenu({
   isOpen,
