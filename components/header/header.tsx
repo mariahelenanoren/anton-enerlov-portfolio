@@ -1,14 +1,25 @@
-import React from 'react';
-import { Link, Box, AppBar, Toolbar } from '@mui/material';
+import React, { useState } from 'react';
+import {
+  Link,
+  Box,
+  AppBar,
+  Toolbar,
+  Theme,
+  useMediaQuery,
+} from '@mui/material';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { PaddingComponent } from '..';
+import { MobileMenu, PaddingComponent } from '..';
 import { useStyles } from './styles';
 import { useRouter } from 'next/router';
+import { useTheme } from '@mui/styles';
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const classes = useStyles();
   const router = useRouter();
+  const theme: Theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.only('xs'));
 
   const checkIfCurrentPage = (href: string) => {
     if (router.pathname === href) {
@@ -50,20 +61,32 @@ export default function Header() {
               ></Image>
             </div>
             <div>
-              {pages.map((page, index) => (
-                <Link
-                  variant="body2"
-                  underline="none"
-                  href={page.href}
-                  className={classNames(
-                    classes.link,
-                    checkIfCurrentPage(page.href) ? classes.active : undefined
-                  )}
-                  key={index}
-                >
-                  {page.title}
-                </Link>
-              ))}
+              {!mobile ? (
+                <>
+                  {pages.map((page, index) => (
+                    <Link
+                      variant="body2"
+                      underline="none"
+                      href={page.href}
+                      className={classNames(
+                        classes.link,
+                        checkIfCurrentPage(page.href)
+                          ? classes.active
+                          : undefined
+                      )}
+                      key={index}
+                    >
+                      {page.title}
+                    </Link>
+                  ))}
+                </>
+              ) : (
+                <MobileMenu
+                  pages={pages}
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                />
+              )}
             </div>
           </Toolbar>
         </AppBar>

@@ -5,18 +5,24 @@ export const useStyles = makeStyles((theme: Theme) => ({
   appbar: {
     flexGrow: 1,
     backgroundColor: 'transparent',
-    zIndex: 100,
+    position: 'relative',
     boxShadow: 'none',
+    padding: '1rem 0',
+    zIndex: 10,
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '2rem 0',
   },
   logoContainer: {
+    zIndex: 10,
     position: 'relative',
     width: '3rem',
     height: '2rem',
+    [theme.breakpoints.only('xs')]: {
+      width: '2.5rem',
+      height: '2rem',
+    },
   },
   link: {
     marginLeft: '3rem',
