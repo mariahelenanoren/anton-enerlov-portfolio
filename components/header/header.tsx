@@ -13,20 +13,15 @@ import { MobileMenu, PaddingComponent } from '..';
 import { useStyles } from './styles';
 import { useRouter } from 'next/router';
 import { useTheme } from '@mui/styles';
+import { ISocialLinks } from './types';
+import { checkIfCurrentPage } from '../../lib/helpers/checkIfCurrentPage';
 
-export default function Header() {
+export default function Header({ socialLinks }: ISocialLinks) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const classes = useStyles();
   const router = useRouter();
   const theme: Theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));
-
-  const checkIfCurrentPage = (href: string) => {
-    if (router.pathname === href) {
-      return true;
-    }
-    return false;
-  };
 
   const pages = [
     {
@@ -70,7 +65,7 @@ export default function Header() {
                       href={page.href}
                       className={classNames(
                         classes.link,
-                        checkIfCurrentPage(page.href)
+                        checkIfCurrentPage(page.href, router.pathname)
                           ? classes.active
                           : undefined
                       )}
@@ -82,6 +77,7 @@ export default function Header() {
                 </>
               ) : (
                 <MobileMenu
+                  socialLinks={socialLinks}
                   pages={pages}
                   isOpen={isOpen}
                   setIsOpen={setIsOpen}

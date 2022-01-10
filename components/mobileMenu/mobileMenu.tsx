@@ -1,12 +1,14 @@
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Backdrop, IconButton, Link, Modal } from '@mui/material';
+import { IconButton, Link, Modal } from '@mui/material';
 import { useRouter } from 'next/router';
 import { checkIfCurrentPage } from '../../lib/helpers/checkIfCurrentPage';
 import classNames from 'classnames';
 import { useStyles } from './styles';
+import { ISocialLinks } from '../header/types';
+import { Image } from 'react-datocms';
 
-interface IMobileMenu {
+interface IMobileMenu extends ISocialLinks {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   pages: {
@@ -15,7 +17,12 @@ interface IMobileMenu {
   }[];
 }
 
-export default function MobileMenu({ isOpen, setIsOpen, pages }: IMobileMenu) {
+export default function MobileMenu({
+  isOpen,
+  setIsOpen,
+  pages,
+  socialLinks,
+}: IMobileMenu) {
   const classes = useStyles();
   const router = useRouter();
   const handleClick = () => {
@@ -34,25 +41,37 @@ export default function MobileMenu({ isOpen, setIsOpen, pages }: IMobileMenu) {
           isOpen ? classes.openModal : classes.closedModal
         )}
       >
-        <div className={classes.menuContainer}>
-          {pages.map((page, index) => (
-            <Link
-              onClick={handleClick}
-              variant="h2"
-              underline="none"
-              href={page.href}
-              className={classNames(
-                classes.link,
-                checkIfCurrentPage(page.href, router.pathname)
-                  ? classes.active
-                  : classes.inActive
-              )}
-              key={index}
-            >
-              {page.title}
-            </Link>
-          ))}
-        </div>
+        <>
+          <div className={classes.menuContainer}>
+            {pages.map((page, index) => (
+              <Link
+                onClick={handleClick}
+                variant="h2"
+                underline="none"
+                href={page.href}
+                className={classNames(
+                  classes.link,
+                  checkIfCurrentPage(page.href, router.pathname)
+                    ? classes.active
+                    : classes.inActive
+                )}
+                key={index}
+              >
+                {page.title}
+              </Link>
+            ))}
+          </div>
+          <div className={classes.socialContainer}>
+            {socialLinks.map((link, index) => (
+              <Link href={link.link} key={index} className={classes.iconLink}>
+                <Image
+                  data={link.icon.responsiveImage}
+                  className={classes.icon}
+                />
+              </Link>
+            ))}
+          </div>
+        </>
       </Modal>
     </>
   );

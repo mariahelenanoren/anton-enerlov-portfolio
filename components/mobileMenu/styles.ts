@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     transition: 'opacity 0.3s',
     backgroundColor: 'rgb(0,0,0,0.8)',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 5,
@@ -36,5 +37,17 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   inActive: {
     fontWeight: 300,
+  },
+  socialContainer: {
+    position: 'absolute',
+    bottom: '6rem',
+    display: 'flex',
+  },
+  iconLink: {
+    margin: '0 0.8rem',
+  },
+  icon: {
+    height: 'auto',
+    width: '1.5rem',
   },
 }));
