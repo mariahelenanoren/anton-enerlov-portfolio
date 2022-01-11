@@ -1,40 +1,46 @@
-import {
-	getFooterData,
-	getProjectData,
-	getProjectsData,
-	IProjects,
-} from '../lib/gql';
-import { IProjectPage } from '../lib/gql/project/types';
+import { getFooterData, getProjectData, getProjectsData } from '../lib/gql';
 import { ProjectPage as Project } from '../components/projectPage';
 import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
+import { IFooter } from '../components/footer/types';
+import { IProject } from '../lib/gql/project/types';
 
-export default function ProjectPage({ project, footer }: IProjectPage) {
-	return (
-		<Layout footer={footer}>
-			{project ? <Project project={project} /> : null}
-		</Layout>
-	);
+interface IProjectPage extends IFooter {
+  allProjects: IProject[];
+  project: IProject;
+}
+
+export default function ProjectPage({
+  project,
+  footer,
+  allProjects,
+}: IProjectPage) {
+  return (
+    <Layout footer={footer}>
+      {project ? <Project allProjects={allProjects} project={project} /> : null}
+    </Layout>
+  );
 }
 
 export async function getStaticProps(context: GetStaticPropsContext) {
-	const { footer } = await getFooterData();
-	const id = context.params?.id || '';
-	const parsedId = id.toString();
-	const { allProjects } = await getProjectData(parsedId);
-	const project = allProjects[0];
+  const { footer } = await getFooterData();
+  const id = context.params?.id || '';
+  const parsedId = id.toString();
+  const filteredProjects = await getProjectData(parsedId);
+  const project = filteredProjects.allProjects[0];
+  const { allProjects } = await getProjectsData(project.categoryTitle);
 
-	return {
-		props: { footer, project },
-	};
+  return {
+    props: { footer, project, allProjects },
+  };
 }
 
 export async function getStaticPaths() {
-	const { allProjects }: IProjects = await getProjectsData();
-	const paths = allProjects.map((project) => ({ params: { id: project.id } }));
+  const { allProjects }: { allProjects: IProject[] } = await getProjectsData();
+  const paths = allProjects.map((project) => ({ params: { id: project.id } }));
 
-	return {
-		paths: paths,
-		fallback: false,
-	};
+  return {
+    paths: paths,
+    fallback: false,
+  };
 }
