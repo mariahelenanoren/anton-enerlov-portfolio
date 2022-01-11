@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
-import { Box, AppBar, Toolbar, Theme, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  Theme,
+  useMediaQuery,
+  Link,
+} from '@mui/material';
 import Image from 'next/image';
 import { PaddingComponent } from '../paddingComponent';
 import { ISocialLinks } from './types';
@@ -36,14 +43,16 @@ export default function Header({ socialLinks }: ISocialLinks) {
     <PaddingComponent>
       <AppBar position="relative" className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
-          <div className={classes.logoContainer}>
-            <Image
-              layout="fill"
-              objectFit="contain"
-              alt="logotype"
-              src="/assets/logo-cropped.png"
-            ></Image>
-          </div>
+          <Link href="/">
+            <div className={classes.logoContainer}>
+              <Image
+                layout="fill"
+                objectFit="contain"
+                alt="logotype"
+                src="/assets/logo-cropped.png"
+              ></Image>
+            </div>
+          </Link>
           <div>
             {!mobile ? (
               <DesktopMenu pages={pages} />
