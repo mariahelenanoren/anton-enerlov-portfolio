@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Link, Modal } from '@mui/material';
+import { Backdrop, IconButton, Link, Modal } from '@mui/material';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { useStyles } from './styles';
 import { Image } from 'react-datocms';
 import { IMobileMenu } from './types';
 import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
+import { stopBodyScroll } from '../../../lib/helpers/stopBodyScroll';
 
 export default function MobileMenu({
   isOpen,
@@ -20,18 +21,16 @@ export default function MobileMenu({
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    stopBodyScroll(isOpen);
+  }, [isOpen]);
+
   return (
     <>
       <IconButton className={classes.button} onClick={handleClick}>
         <MenuIcon className={classes.buttonIcon} color="primary" />
       </IconButton>
-      <Modal
-        open={true}
-        className={classNames(
-          classes.modal,
-          isOpen ? classes.openModal : classes.closedModal
-        )}
-      >
+      <Backdrop open={isOpen} className={classes.backdrop}>
         <>
           <div className={classes.menuContainer}>
             {pages.map((page, index) => (
@@ -63,7 +62,7 @@ export default function MobileMenu({
             ))}
           </div>
         </>
-      </Modal>
+      </Backdrop>
     </>
   );
 }

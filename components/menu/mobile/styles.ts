@@ -2,20 +2,8 @@ import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-  modal: {
-    transition: 'opacity 0.3s',
-    backgroundColor: 'rgb(0,0,0,0.75)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 5,
-  },
-  openModal: {
-    opacity: 1,
-  },
-  closedModal: {
-    opacity: 0,
+  backdrop: {
+    backgroundColor: 'rgb(0,0,0,0.8)',
   },
   button: {
     zIndex: 10,
