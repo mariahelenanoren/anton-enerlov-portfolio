@@ -1,11 +1,11 @@
 import { Grid, Typography } from '@mui/material';
-import { IProject } from '../../lib/gql/project/types';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
 import { Image } from 'react-datocms';
 import { ProjectTextContainer } from '../projectTextContainer';
 import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
+import { IProject } from './types';
 
 export default function ProjectPage({ project }: IProject) {
 	const classes = useStyles();
