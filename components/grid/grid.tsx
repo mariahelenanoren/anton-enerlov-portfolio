@@ -15,8 +15,8 @@ export default function Grid({ allProjects }: IProjects) {
 			<div className={classes.mansonryContainer}>
 				<Masonry columns={2} spacing={2}>
 					{allProjects.map((project, index) => (
-						<Link key={index} href={project.id} passHref>
-							<AnimationContainer key={index}>
+						<AnimationContainer key={index}>
+							<Link key={index} href={project.id} passHref>
 								<div className={classes.imageContainer}>
 									<Image data={project.featuredImage.responsiveImage} />
 									<div className={classes.overlay}>
@@ -25,8 +25,8 @@ export default function Grid({ allProjects }: IProjects) {
 										</Typography>
 									</div>
 								</div>
-							</AnimationContainer>
-						</Link>
+							</Link>
+						</AnimationContainer>
 					))}
 				</Masonry>
 			</div>

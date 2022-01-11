@@ -36,6 +36,7 @@ export default function ProjectPage({ project }: IProject) {
 					retouch={project.retouch}
 				/>
 			</ProjectTextContainer>
+			<ImageGrid images={project.images}></ImageGrid>
 		</div>
 	);
 }

@@ -10,7 +10,7 @@ export interface IProject {
 		};
 		images: {
 			responsiveImage: ResponsiveImageType;
-		};
+		}[];
 		client: {
 			name?: string;
 		}[];
