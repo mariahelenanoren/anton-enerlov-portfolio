@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 
 export const PROJECT_QUERY = gql`
-	query GetProject($id: ItemId!) {
+	query GetProject($id: ItemId) {
 		allProjects(filter: { id: { eq: $id } }) {
 			id
 			title

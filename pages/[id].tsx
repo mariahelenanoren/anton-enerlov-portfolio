@@ -7,6 +7,7 @@ import {
 import { IProjectPage } from '../lib/gql/project/types';
 import { ProjectPage as Project } from '../components/projectPage';
 import { Layout } from '../layout/layout';
+import { GetStaticPropsContext } from 'next';
 
 export default function ProjectPage({ project, footer }: IProjectPage) {
 	return (
@@ -16,10 +17,11 @@ export default function ProjectPage({ project, footer }: IProjectPage) {
 	);
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: GetStaticPropsContext) {
 	const { footer } = await getFooterData();
-	const id = context.params.id;
-	const { allProjects } = await getProjectData(id);
+	const id = context.params?.id || '';
+	const parsedId = id.toString();
+	const { allProjects } = await getProjectData(parsedId);
 	const project = allProjects[0];
 
 	return {
