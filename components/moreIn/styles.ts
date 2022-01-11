@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 export const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {
     textAlign: 'center',
+    marginTop: '10rem',
   },
   itemContent: {
     position: 'relative',

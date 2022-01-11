@@ -26,8 +26,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const { footer } = await getFooterData();
   const id = context.params?.id || '';
   const parsedId = id.toString();
-  const { allProjects } = await getProjectData(parsedId);
-  const project = allProjects[0];
+  const filteredProjects = await getProjectData(parsedId);
+  const project = filteredProjects.allProjects[0];
+  const { allProjects } = await getProjectsData(project.categoryTitle);
 
   return {
     props: { footer, project, allProjects },
