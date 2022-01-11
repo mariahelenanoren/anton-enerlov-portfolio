@@ -2,12 +2,11 @@ import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-	infoContainer: {},
+	infoContainer: {
+		marginTop: '3rem',
+	},
 
-	text: {
+	textGrid: {
 		marginTop: '2rem',
-		display: 'flex',
-		justifyContent: 'flex-start',
-		alignItems: 'center',
 	},
 }));

@@ -5,6 +5,7 @@ import { useStyles } from './styles';
 import { Image } from 'react-datocms';
 import { ProjectTextContainer } from '../projectTextContainer';
 import { ProjectInfo } from '../projectInfo';
+import { ImageGrid } from '../imageGrid';
 
 export default function ProjectPage({ project }: IProject) {
 	const classes = useStyles();

@@ -23,4 +23,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
 	},
 
 	firstImage: {},
+
+	imageGrid: {},
 }));
