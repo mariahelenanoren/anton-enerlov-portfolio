@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   backdrop: {
-    backgroundColor: 'rgb(0,0,0,0.8)',
+    backgroundColor: 'rgb(0,0,0,0.85)',
   },
   button: {
     zIndex: 10,

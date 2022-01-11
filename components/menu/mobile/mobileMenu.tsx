@@ -30,7 +30,11 @@ export default function MobileMenu({
       <IconButton className={classes.button} onClick={handleClick}>
         <MenuIcon className={classes.buttonIcon} color="primary" />
       </IconButton>
-      <Backdrop open={isOpen} className={classes.backdrop}>
+      <Backdrop
+        transitionDuration={300}
+        open={isOpen}
+        className={classes.backdrop}
+      >
         <>
           <div className={classes.menuContainer}>
             {pages.map((page, index) => (
