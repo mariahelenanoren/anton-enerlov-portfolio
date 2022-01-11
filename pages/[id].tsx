@@ -1,15 +1,9 @@
-import {
-  getFooterData,
-  getProjectData,
-  getProjectsData,
-  IProjects,
-} from '../lib/gql';
-import { IProjectPage } from '../lib/gql/project/types';
+import { getFooterData, getProjectData, getProjectsData } from '../lib/gql';
 import { ProjectPage as Project } from '../components/projectPage';
 import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
-import { IProject } from '../components/projectPage/types';
 import { IFooter } from '../components/footer/types';
+import { IProject } from '../lib/gql/project/types';
 
 interface IProjectPage extends IFooter {
   allProjects: IProject[];

@@ -5,8 +5,8 @@ import { Image } from 'react-datocms';
 import { ProjectTextContainer } from '../projectTextContainer';
 import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
-import { IProject } from './types';
 import { MoreIn } from '../moreIn';
+import { IProject } from '../../lib/gql/project/types';
 
 interface IProjectPage {
   project: IProject;

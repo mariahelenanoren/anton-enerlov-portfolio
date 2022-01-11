@@ -1,7 +1,7 @@
 import { getLandingData } from './landing';
 import { getFooterData } from './footer';
 import { getProjectsData } from './projects';
-import { getAboutPageData, IAboutPage } from './about';
+import { getAboutPageData } from './about';
 import { getProjectData } from './project';
 
 export {
@@ -9,6 +9,5 @@ export {
   getFooterData,
   getProjectsData,
   getAboutPageData,
-  type IAboutPage,
   getProjectData,
 };
