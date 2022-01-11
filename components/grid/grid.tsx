@@ -16,7 +16,7 @@ export default function Grid({ allProjects }: IProjects) {
 				<Masonry columns={2} spacing={2}>
 					{allProjects.map((project, index) => (
 						<AnimationContainer key={index}>
-							<Link key={index} href={project.id} passHref>
+							<Link key={index} href={`/${project.id}`} passHref>
 								<div className={classes.imageContainer}>
 									<Image data={project.featuredImage.responsiveImage} />
 									<div className={classes.overlay}>

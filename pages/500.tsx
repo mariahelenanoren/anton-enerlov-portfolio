@@ -2,13 +2,13 @@ import { FiveOhOh } from '../layout/500';
 import { getFooterData } from '../lib/gql';
 
 export default function Custom505() {
-  return <FiveOhOh />;
+	return <FiveOhOh />;
 }
 
-export const getStaticProps = async () => {
-  const { footer } = await getFooterData();
+export const getServerSideProps = async () => {
+	const { footer } = await getFooterData();
 
-  return {
-    props: { footer },
-  };
+	return {
+		props: { footer },
+	};
 };
