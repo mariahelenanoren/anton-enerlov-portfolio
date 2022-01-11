@@ -10,6 +10,7 @@ import { Loader } from './loader';
 import { ProjectInfo } from './projectInfo';
 import { ProjectPage } from './projectPage';
 import { ImageGrid } from './imageGrid';
+import { AnimationContainer } from './animationContainer';
 
 export {
 	PaddingComponent,
@@ -24,4 +25,5 @@ export {
 	ProjectInfo,
 	ProjectPage,
 	ImageGrid,
+	AnimationContainer,
 };

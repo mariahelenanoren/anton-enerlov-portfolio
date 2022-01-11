@@ -1,21 +1,24 @@
-import React from 'react';
-import { Link, Box, AppBar, Toolbar } from '@mui/material';
-import classNames from 'classnames';
+import React, { useState } from 'react';
+import { useTheme } from '@mui/styles';
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  Theme,
+  useMediaQuery,
+  Link,
+} from '@mui/material';
 import Image from 'next/image';
-import { PaddingComponent } from '..';
+import { PaddingComponent } from '../paddingComponent';
+import { ISocialLinks } from './types';
 import { useStyles } from './styles';
-import { useRouter } from 'next/router';
+import { DesktopMenu, MobileMenu } from '../menu';
 
-export default function Header() {
+export default function Header({ socialLinks }: ISocialLinks) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const classes = useStyles();
-  const router = useRouter();
-
-  const checkIfCurrentPage = (href: string) => {
-    if (router.pathname === href) {
-      return true;
-    }
-    return false;
-  };
+  const theme: Theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.only('xs'));
 
   const pages = [
     {
@@ -38,9 +41,9 @@ export default function Header() {
 
   return (
     <PaddingComponent>
-      <Box>
-        <AppBar position="relative" className={classes.appbar}>
-          <Toolbar className={classes.toolbar}>
+      <AppBar position="relative" className={classes.appbar}>
+        <Toolbar className={classes.toolbar}>
+          <Link href="/">
             <div className={classes.logoContainer}>
               <Image
                 layout="fill"
@@ -49,25 +52,21 @@ export default function Header() {
                 src="/assets/logo-cropped.png"
               ></Image>
             </div>
-            <div>
-              {pages.map((page, index) => (
-                <Link
-                  variant="body2"
-                  underline="none"
-                  href={page.href}
-                  className={classNames(
-                    classes.link,
-                    checkIfCurrentPage(page.href) ? classes.active : undefined
-                  )}
-                  key={index}
-                >
-                  {page.title}
-                </Link>
-              ))}
-            </div>
-          </Toolbar>
-        </AppBar>
-      </Box>
+          </Link>
+          <div>
+            {!mobile ? (
+              <DesktopMenu pages={pages} />
+            ) : (
+              <MobileMenu
+                socialLinks={socialLinks}
+                pages={pages}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+              />
+            )}
+          </div>
+        </Toolbar>
+      </AppBar>
     </PaddingComponent>
   );
 }
