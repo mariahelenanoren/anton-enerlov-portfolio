@@ -1,13 +1,11 @@
 import { Landing, Grid } from '../components';
-import {
-  getFooterData,
-  getLandingData,
-  getProjectsData,
-  IProjects,
-} from '../lib/gql';
+import { getFooterData, getLandingData, getProjectsData } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing';
+import { IProject } from '../lib/gql/project/types';
 
-interface ILifestylePage extends ILanding, IProjects {}
+interface ILifestylePage extends ILanding {
+  allProjects: IProject[];
+}
 
 export default function LifestylePage({
   landing,

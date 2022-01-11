@@ -1,20 +1,14 @@
 import { Landing, Footer, Grid } from '../components';
 import { IFooter } from '../components/footer/types';
-import {
-  getLandingData,
-  getFooterData,
-  getProjectsData,
-  IProjects,
-} from '../lib/gql';
+import { getLandingData, getFooterData, getProjectsData } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing/types';
+import { IProject } from '../lib/gql/project/types';
 
-interface IOutdoorPage extends ILanding, IFooter, IProjects {}
+interface IOutdoorPage extends ILanding, IFooter {
+  allProjects: IProject[];
+}
 
-export default function OutdoorPage({
-  landing,
-  footer,
-  allProjects,
-}: IOutdoorPage) {
+export default function OutdoorPage({ landing, allProjects }: IOutdoorPage) {
   return (
     <>
       <Landing landing={landing} />

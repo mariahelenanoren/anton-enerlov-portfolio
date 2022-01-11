@@ -1,9 +1,7 @@
-import { getFooterData, getProjectData, IProjects } from '../lib/gql';
+import { getFooterData, getProjectData } from '../lib/gql';
 import { getProjectsData } from '../lib/gql';
 import { IProject } from '../lib/gql/project/types';
 import { ProjectPage as Project } from '../components/projectPage';
-
-export interface IProjectPage extends IProject {}
 
 export default function ProjectPage({
   project,
@@ -34,7 +32,7 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths() {
-  const { allProjects }: { allProjects: IProjects[] } = await getProjectsData();
+  const { allProjects }: { allProjects: IProject[] } = await getProjectsData();
   const paths = allProjects.map((project) => ({ params: { id: project.id } }));
 
   return {
