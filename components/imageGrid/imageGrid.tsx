@@ -6,13 +6,13 @@ import { Image } from 'react-datocms';
 export default function ImageGrid({ images }: IProjectImages) {
 	return (
 		<PaddingComponent>
-			{images.map((images, index) => (
-				<Grid container spacing={1} key={index}>
-					<Grid item xs={12}>
+			<Grid container spacing={2}>
+				{images.map((images, index) => (
+					<Grid item xs={12} key={index}>
 						<Image data={images.responsiveImage}></Image>
 					</Grid>
-				</Grid>
-			))}
+				))}
+			</Grid>
 		</PaddingComponent>
 	);
 }
