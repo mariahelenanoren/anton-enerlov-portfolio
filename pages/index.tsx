@@ -1,5 +1,6 @@
-import { Landing, Footer, Grid } from '../components';
+import { Landing, Grid } from '../components';
 import { IFooter } from '../components/footer/types';
+import { Layout } from '../layout/layout';
 import {
 	getLandingData,
 	getFooterData,
@@ -16,14 +17,14 @@ export default function OutdoorPage({
 	allProjects,
 }: IOutdoorPage) {
 	return (
-		<>
+		<Layout footer={footer}>
 			<Landing landing={landing} />
 			<Grid allProjects={allProjects} />
-		</>
+		</Layout>
 	);
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const { landing } = await getLandingData();
 	const { allProjects } = await getProjectsData('Outdoor');
 	const { footer } = await getFooterData();

@@ -1,7 +1,6 @@
 import { ResponsiveImageType } from 'react-datocms';
-import { IFooter } from '../../../components/footer/types';
 
-export interface IProjectPage extends IFooter {
+export interface IProject {
 	project: {
 		id: string;
 		title: string;
