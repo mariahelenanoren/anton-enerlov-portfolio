@@ -1,8 +1,9 @@
 import { gql } from 'graphql-request';
 
 export const PROJECTS_QUERY = gql`
-  query GetProjects($category: String!) {
+  query GetProjects($category: String) {
     allProjects(filter: { categoryTitle: { eq: $category } }) {
+      id
       title
       categoryTitle
       featuredImage {
