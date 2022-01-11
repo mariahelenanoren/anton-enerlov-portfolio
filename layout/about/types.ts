@@ -1,7 +1,6 @@
 import { StructuredTextDocument } from 'react-datocms';
-import { IFooter } from '../../../components/footer/types';
 
-export interface IAboutPage extends IFooter {
+export interface IAbout {
 	aboutPage: {
 		title: string;
 		video: {

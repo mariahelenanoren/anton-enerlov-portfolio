@@ -1,30 +1,39 @@
-import { getFooterData, getProjectData } from '../lib/gql';
-import { getProjectsData } from '../lib/gql';
-import { IProject } from '../lib/gql/project/types';
+import {
+  getFooterData,
+  getProjectData,
+  getProjectsData,
+  IProjects,
+} from '../lib/gql';
+import { IProjectPage } from '../lib/gql/project/types';
 import { ProjectPage as Project } from '../components/projectPage';
+import { Layout } from '../layout/layout';
+import { GetStaticPropsContext } from 'next';
+import { IProject } from '../components/projectPage/types';
+import { IFooter } from '../components/footer/types';
+
+interface IProjectPage extends IFooter {
+  allProjects: IProject[];
+  project: IProject;
+}
 
 export default function ProjectPage({
   project,
+  footer,
   allProjects,
-}: {
-  project: IProject;
-  allProjects: IProject[];
-}) {
+}: IProjectPage) {
   return (
-    <>
+    <Layout footer={footer}>
       {project ? <Project allProjects={allProjects} project={project} /> : null}
-    </>
+    </Layout>
   );
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: GetStaticPropsContext) {
   const { footer } = await getFooterData();
-
-  const id = context.params.id.toString();
-  const filteredProjects = await getProjectData(id);
-  const project = filteredProjects.allProjects[0];
-
-  const { allProjects } = await getProjectsData(project.categoryTitle);
+  const id = context.params?.id || '';
+  const parsedId = id.toString();
+  const { allProjects } = await getProjectData(parsedId);
+  const project = allProjects[0];
 
   return {
     props: { footer, project, allProjects },
@@ -37,6 +46,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }

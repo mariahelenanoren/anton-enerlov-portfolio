@@ -10,7 +10,7 @@ export default function Layout({
   const classes = useStyles();
   return (
     <>
-      <Header />
+      <Header socialLinks={footer.socialLinks} />
       <main className={classes.main}>{children}</main>
       <Footer footer={footer} />
     </>

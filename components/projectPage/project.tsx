@@ -1,16 +1,17 @@
 import { Grid, Typography } from '@mui/material';
-import { IProject } from '../../lib/gql/project/types';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
 import { Image } from 'react-datocms';
+import { ProjectTextContainer } from '../projectTextContainer';
+import { ProjectInfo } from '../projectInfo';
+import { ImageGrid } from '../imageGrid';
+import { IProject } from './types';
+import { MoreIn } from '../moreIn';
+
 interface IProjectPage {
   project: IProject;
   allProjects: IProject[];
 }
-
-import { ProjectTextContainer } from '../projectTextContainer';
-import { ProjectInfo } from '../projectInfo';
-import { MoreIn } from '../moreIn';
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
   const classes = useStyles();
@@ -41,6 +42,7 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
           retouch={project.retouch}
         />
       </ProjectTextContainer>
+      <ImageGrid images={project.images}></ImageGrid>
       <MoreIn allProjects={allProjects} id={project.id} />
     </div>
   );
