@@ -1,5 +1,5 @@
 import { Masonry } from '@mui/lab';
-import { Typography, Link } from '@mui/material';
+import { Typography, Link, useMediaQuery, useTheme } from '@mui/material';
 import { useRouter } from 'next/router';
 import { Image } from 'react-datocms';
 import { IProject } from '../../lib/gql/project/types';
@@ -11,11 +11,13 @@ import { IGrid } from './types';
 
 export default function Grid({ allProjects }: IGrid) {
   const classes = useStyles();
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.only('xs'));
 
   return (
     <PaddingComponent>
       <div className={classes.mansonryContainer}>
-        <Masonry columns={2} spacing={2}>
+        <Masonry columns={mobile ? 1 : 2} spacing={2}>
           {allProjects.map((project, index) => (
             <AnimationContainer key={index}>
               <Link href={`/${transformToRoute(project.title)}`} key={index}>
