@@ -8,6 +8,7 @@ import {
   transformFromRoute,
   transformToRoute,
 } from '../lib/helpers/transformRoute';
+import { Page } from '../components';
 
 interface IProjectPage extends IFooter {
   allProjects: IProject[];
@@ -20,9 +21,16 @@ export default function ProjectPage({
   allProjects,
 }: IProjectPage) {
   return (
-    <Layout footer={footer}>
-      {project ? <Project allProjects={allProjects} project={project} /> : null}
-    </Layout>
+    <Page
+      title={project.title}
+      description={`${project.title} in ${project.categoryTitle}.`}
+    >
+      <Layout footer={footer}>
+        {project ? (
+          <Project allProjects={allProjects} project={project} />
+        ) : null}
+      </Layout>
+    </Page>
   );
 }
 
