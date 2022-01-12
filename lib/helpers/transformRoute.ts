@@ -1,9 +1,9 @@
 export const transformToRoute = (text: string) => {
-  const route = text.replaceAll('-', '&').replaceAll(' ', '-').toLowerCase();
+  const route = text.replace(/-/g, '&').replace(/ /g, '-').toLowerCase();
   return route;
 };
 
 export const transformFromRoute = (route: string) => {
-  const text = route.replaceAll('-', ' ').replaceAll('&', '-');
+  const text = route.replace(/-/g, ' ').replaceAll(/&/g, '-');
   return text;
 };
