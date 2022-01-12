@@ -20,29 +20,26 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
     <div className={classes.projectContainer}>
       <PaddingComponent>
         <div className={classes.titleContainer}>
-          <p className={classes.category}>{project.categoryTitle}</p>
+          <Typography variant="overline">{project.categoryTitle}</Typography>
           <Typography variant="h2" textAlign={'center'}>
             {project.title}
           </Typography>
         </div>
       </PaddingComponent>
-      <Grid container spacing={1}>
-        <Image
-          data={project.featuredImage.responsiveImage}
-          className={classes.firstImage}
-        />
-      </Grid>
-      <ProjectTextContainer>
-        <ProjectInfo
-          client={project.client}
-          productionCompany={project.productionCompany}
-          model={project.model}
-          producer={project.producer}
-          agency={project.agency}
-          retouch={project.retouch}
-        />
-      </ProjectTextContainer>
-      <ImageGrid images={project.images}></ImageGrid>
+      <Image
+        data={project.featuredImage.responsiveImage}
+        className={classes.firstImage}
+      />
+      <ProjectInfo
+        client={project.client}
+        productionCompany={project.productionCompany}
+        model={project.model}
+        producer={project.producer}
+        agency={project.agency}
+        retouch={project.retouch}
+      />
+      <ProjectTextContainer></ProjectTextContainer>
+      <ImageGrid images={project.images} />
       <MoreIn allProjects={allProjects} id={project.id} />
     </div>
   );

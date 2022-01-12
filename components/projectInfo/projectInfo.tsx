@@ -14,88 +14,68 @@ export default function ProjectInfo({
   const classes = useStyles();
   return (
     <PaddingComponent>
-      <>
-        <Grid
-          container
-          spacing={5}
-          className={classes.infoContainer}
-          direction={'row'}
-        >
-          <Grid item xs={3} className={classes.textGrid}>
-            <Typography variant="body1">Client</Typography>
-          </Grid>
-          {client.map((c, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {c.name}
-            </Typography>
-          ))}
-
-          <Grid item xs={3}>
-            <Typography variant="body1">Production Company</Typography>
-          </Grid>
-          {productionCompany.map((pc, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {pc.name}
-            </Typography>
-          ))}
-          <Grid item xs={3}>
-            <Typography variant="body1">Models</Typography>
-          </Grid>
-          {model.map((m, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {m.name}
-            </Typography>
-          ))}
-          <Grid item xs={3}>
-            <Typography variant="body1">Producer</Typography>
-          </Grid>
-          {producer.map((p, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {p.name}
-            </Typography>
-          ))}
-          <Grid item xs={3}>
-            <Typography variant="body1">Agency</Typography>
-          </Grid>
-          {agency.map((a, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {a.name}
-            </Typography>
-          ))}
-          <Grid item xs={3}>
-            <Typography variant="body1">Retouch</Typography>
-          </Grid>
-          {retouch.map((r, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              className={classes.textGrid}
-            >
-              {r.name}
-            </Typography>
-          ))}
-        </Grid>
-      </>
+      <div className={classes.infoContainer}>
+        {client.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Client</Typography>
+            {client.map((c, index) => (
+              <Typography className={classes.name} key={index} variant="h4">
+                {c.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+        {productionCompany.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Production company</Typography>
+            {productionCompany.map((pc, index) => (
+              <Typography className={classes.name} key={index} variant="h4">
+                {pc.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+        {producer.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Producer</Typography>
+            {producer.map((p, index) => (
+              <Typography className={classes.name} variant="h4" key={index}>
+                {p.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+        {agency.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Agency</Typography>
+            {agency.map((a, index) => (
+              <Typography className={classes.name} variant="h4" key={index}>
+                {a.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+        {model.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Model</Typography>
+            {model.map((m, index) => (
+              <Typography className={classes.name} variant="h4" key={index}>
+                {m.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+        {retouch.length ? (
+          <div className={classes.info}>
+            <Typography variant="overline">Retouch</Typography>
+            {retouch.map((r, index) => (
+              <Typography className={classes.name} variant="h4" key={index}>
+                {r.name}
+              </Typography>
+            ))}
+          </div>
+        ) : null}
+      </div>
     </PaddingComponent>
   );
 }
