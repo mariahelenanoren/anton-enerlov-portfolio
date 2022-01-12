@@ -12,8 +12,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
 	landingContainer: {
 		height: '100vh',
 		position: 'relative',
-		'@media (max-width: 600px)': {
-			height: '60vh',
+		'@media (max-width: 400px)': {
+			height: '55vh',
 		},
 	},
 	imageContainer: {
@@ -22,11 +22,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		right: 0,
 		left: 0,
 		bottom: 0,
+		'@media (max-width: 400px)': {
+			height: '55vh',
+		},
 	},
 	image: {
 		width: '100%',
 		height: '100%',
-
 		'& img': {
 			height: '100%',
 			width: '100%',
@@ -58,15 +60,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		justifyContent: 'center',
 		position: 'relative',
 		height: '100%',
-		'@media (max-width: 375px)': {
-			marginTop: '-5rem',
-		},
 	},
 	iconContainer: {
 		marginTop: '1rem',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+		'@media (max-width: 400px)': {
+			margin: '-0.2rem',
+		},
 	},
 	link: {
 		margin: '0 0.8rem',
