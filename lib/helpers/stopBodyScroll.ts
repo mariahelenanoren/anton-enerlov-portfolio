@@ -1,11 +1,13 @@
 export const stopBodyScroll = (shouldStop: boolean) => {
-  const body = document.body;
+  const wrapper = document.getElementById('__next');
 
-  if (shouldStop) {
-    body.style.maxHeight = '100vh';
-    body.style.overflowY = 'hidden';
-  } else {
-    body.style.maxHeight = 'auto';
-    body.style.overflowY = 'auto';
+  if (wrapper) {
+    if (shouldStop) {
+      wrapper.style.maxHeight = '100vh';
+      wrapper.style.overflowY = 'hidden';
+    } else {
+      wrapper.style.maxHeight = 'auto';
+      wrapper.style.overflowY = 'auto';
+    }
   }
 };
