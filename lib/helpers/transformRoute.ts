@@ -4,6 +4,6 @@ export const transformToRoute = (text: string) => {
 };
 
 export const transformFromRoute = (route: string) => {
-  const text = route.replace(/-/g, ' ').replaceAll(/&/g, '-');
+  const text = route.replace(/-/g, ' ').replace(/&/g, '-');
   return text;
 };
