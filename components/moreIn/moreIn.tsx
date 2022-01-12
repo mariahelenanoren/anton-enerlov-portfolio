@@ -15,7 +15,6 @@ interface IMoreIn {
 export default function MoreIn({ allProjects, id }: IMoreIn) {
   const classes = useStyles();
   const [suggestedProjects, setSuggestedProjects] = useState<IProject[]>([]);
-  console.log(allProjects);
 
   useEffect(() => {
     const filteredProjects = allProjects.filter((project) => project.id !== id);
