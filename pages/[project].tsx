@@ -4,6 +4,10 @@ import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
 import { IFooter } from '../components/footer/types';
 import { IProject } from '../lib/gql/project/types';
+import {
+  transformFromRoute,
+  transformToRoute,
+} from '../lib/helpers/transformRoute';
 
 interface IProjectPage extends IFooter {
   allProjects: IProject[];
@@ -24,9 +28,10 @@ export default function ProjectPage({
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const { footer } = await getFooterData();
-  const id = context.params?.id || '';
-  const parsedId = id.toString();
-  const filteredProjects = await getProjectData(parsedId);
+  const projectTitle = transformFromRoute(
+    (context.params?.project as string) || ''
+  );
+  const filteredProjects = await getProjectData(projectTitle);
   const project = filteredProjects.allProjects[0];
   const { allProjects } = await getProjectsData(project.categoryTitle);
 
@@ -37,7 +42,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 
 export async function getStaticPaths() {
   const { allProjects }: { allProjects: IProject[] } = await getProjectsData();
-  const paths = allProjects.map((project) => ({ params: { id: project.id } }));
+  const paths = allProjects.map((project) => ({
+    params: { project: transformToRoute(project.title) },
+  }));
 
   return {
     paths: paths,

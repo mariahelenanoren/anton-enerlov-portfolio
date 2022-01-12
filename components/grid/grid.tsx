@@ -1,7 +1,9 @@
 import { Masonry } from '@mui/lab';
-import { Typography } from '@mui/material';
-import Link from 'next/link';
+import { Typography, Link } from '@mui/material';
+import { useRouter } from 'next/router';
 import { Image } from 'react-datocms';
+import { IProject } from '../../lib/gql/project/types';
+import { transformToRoute } from '../../lib/helpers/transformRoute';
 import { AnimationContainer } from '../animationContainer';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
@@ -16,7 +18,7 @@ export default function Grid({ allProjects }: IGrid) {
         <Masonry columns={2} spacing={2}>
           {allProjects.map((project, index) => (
             <AnimationContainer key={index}>
-              <Link key={index} href={`/${project.id}`} passHref>
+              <Link href={`/${transformToRoute(project.title)}`} key={index}>
                 <div className={classes.imageContainer}>
                   <Image data={project.featuredImage.responsiveImage} />
                   <div className={classes.overlay}>
