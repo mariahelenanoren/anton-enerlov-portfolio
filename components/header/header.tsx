@@ -45,6 +45,7 @@ export default function Header({ socialLinks }: ISocialLinks) {
         position="relative"
         color="transparent"
         className={classes.appbar}
+        elevation={0}
       >
         <Toolbar className={classes.toolbar}>
           <Link href="/">
