@@ -5,11 +5,10 @@ export const PROJECT_QUERY = gql`
     allProjects(
       filter: { title: { matches: { pattern: $title, caseSensitive: false } } }
     ) {
-      id
       title
       categoryTitle
       featuredImage {
-        responsiveImage {
+        responsiveImage(imgixParams: { q: 90 }) {
           alt
           aspectRatio
           base64
@@ -24,7 +23,7 @@ export const PROJECT_QUERY = gql`
         }
       }
       images {
-        responsiveImage {
+        responsiveImage(imgixParams: { q: 90 }) {
           alt
           aspectRatio
           base64
