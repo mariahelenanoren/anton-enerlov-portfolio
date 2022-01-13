@@ -14,7 +14,7 @@ export default function About({ aboutPage }: IAbout) {
 	return (
 		<PaddingComponent>
 			<div className={classes.aboutContainer}>
-				<Typography variant="h1">{aboutPage.title}</Typography>
+				<Typography variant="h2">{aboutPage.title}</Typography>
 				<TextContainer>
 					<div className={classes.textContainer}>
 						<StructuredText data={aboutPage.body.value} />

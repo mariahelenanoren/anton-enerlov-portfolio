@@ -11,7 +11,7 @@ export default function Contact({ contactPage }: IContact) {
 		<>
 			<PaddingComponent>
 				<Typography
-					variant="h1"
+					variant="h2"
 					textAlign={'center'}
 					className={classes.contactTitle}
 				>
