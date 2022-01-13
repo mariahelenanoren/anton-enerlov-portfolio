@@ -1,3 +1,4 @@
+import { Page } from '../components';
 import { IFooter } from '../components/footer/types';
 import { About } from '../layout/about';
 import { Layout } from '../layout/layout';
@@ -8,9 +9,14 @@ interface IAboutPage extends IAbout, IFooter {}
 
 export default function AboutPage({ aboutPage, footer }: IAboutPage) {
   return (
-    <Layout footer={footer}>
-      <About aboutPage={aboutPage} />
-    </Layout>
+    <Page
+      title="About"
+      description="Anton Enerlöv is an action and outdoor photographer based in Stockholm. "
+    >
+      <Layout footer={footer}>
+        <About aboutPage={aboutPage} />
+      </Layout>
+    </Page>
   );
 }
 
