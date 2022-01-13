@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Image } from 'react-datocms';
 import { PaddingComponent } from '..';
 import { IProject } from '../../lib/gql/project/types';
+import { transformToRoute } from '../../lib/helpers/transformRoute';
 import { useStyles } from './styles';
 
 interface IMoreIn {
@@ -35,7 +36,11 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
             >{`More in ${suggestedProjects[0].categoryTitle.toLowerCase()}`}</Typography>
             <Grid container direction="row" spacing={3}>
               {suggestedProjects.map((project, index) => (
-                <Link key={index} href={project.id} passHref>
+                <Link
+                  key={index}
+                  href={`/${transformToRoute(project.title)}`}
+                  passHref
+                >
                   <Grid item xs={12} md={4}>
                     <div className={classes.itemContent}>
                       <Image
