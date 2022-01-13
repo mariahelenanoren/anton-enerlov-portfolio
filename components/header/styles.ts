@@ -4,8 +4,6 @@ import { makeStyles } from '@mui/styles';
 export const useStyles = makeStyles((theme: Theme) => ({
   appbar: {
     flexGrow: 1,
-    backgroundColor: 'transparent',
-    position: 'relative',
     boxShadow: 'none',
     padding: '1rem 0',
     zIndex: 10,
