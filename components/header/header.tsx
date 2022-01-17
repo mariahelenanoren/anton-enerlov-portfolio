@@ -41,7 +41,11 @@ export default function Header({ socialLinks }: ISocialLinks) {
 
   return (
     <PaddingComponent>
-      <AppBar position="relative" className={classes.appbar}>
+      <AppBar
+        position="relative"
+        color="transparent"
+        className={classes.appbar}
+      >
         <Toolbar className={classes.toolbar}>
           <Link href="/">
             <div className={classes.logoContainer}>

@@ -8,7 +8,9 @@ export const LANDING_QUERY = gql`
       socialLinks {
         link
         icon {
-          responsiveImage {
+          responsiveImage(
+            imgixParams: { auto: format, fit: max, w: 32, h: 32 }
+          ) {
             alt
             aspectRatio
             base64
