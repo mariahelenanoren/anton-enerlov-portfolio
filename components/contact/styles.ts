@@ -11,9 +11,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		textAlign: 'center',
 		justifyContent: 'center',
 		alignItems: 'center',
-		fontSize: 16,
+		fontSize: 18,
 		[theme.breakpoints.only('xs')]: {
-			fontSize: 14,
+			fontSize: 16,
 		},
 		'& a': {
 			textDecoration: 'underline',

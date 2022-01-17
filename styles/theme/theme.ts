@@ -17,7 +17,7 @@ export const theme = createTheme({
 	typography: {
 		fontFamily: ['Montserrat', 'Arial', 'sans-serif'].join(','),
 		h1: {
-			fontSize: 64,
+			fontSize: 48,
 			'@media (max-width: 900px)': {
 				fontSize: 48,
 			},
