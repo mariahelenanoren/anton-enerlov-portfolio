@@ -24,8 +24,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
     transition: 'opacity 0.3s',
     zIndex: '1000',
 
-    '&:hover': {
-      opacity: 1,
+    [theme.breakpoints.up('sm')]: {
+      '&:hover': {
+        opacity: 1,
+      },
     },
   },
   text: {
