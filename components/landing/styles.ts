@@ -16,6 +16,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
 			height: '55vh',
 		},
 	},
+
+	landingTitle: {
+		fontSize: '64px',
+		'@media (max-width: 400px)': {
+			fontSize: '40px',
+		},
+	},
 	imageContainer: {
 		position: 'absolute',
 		top: '-6rem',
@@ -66,9 +73,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		'@media (max-width: 400px)': {
-			margin: '-0.2rem',
-		},
 	},
 	link: {
 		margin: '0 0.8rem',

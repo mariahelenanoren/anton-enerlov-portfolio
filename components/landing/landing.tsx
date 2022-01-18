@@ -25,7 +25,11 @@ export default function Landing({ landing }: ILanding) {
 					<PaddingComponent>
 						<Grid container spacing={2} direction={'column'}>
 							<Grid item>
-								<Typography variant="h1" textAlign={'center'}>
+								<Typography
+									variant="h1"
+									textAlign={'center'}
+									className={classes.landingTitle}
+								>
 									{landing.title}
 								</Typography>
 							</Grid>
