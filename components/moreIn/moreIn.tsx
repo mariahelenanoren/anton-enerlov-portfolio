@@ -49,7 +49,7 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
                       />
                       <div className={classes.overlay}>
                         <Typography
-                          variant="h4"
+                          variant="h3"
                           className={classes.projectTitle}
                         >
                           {project.title}

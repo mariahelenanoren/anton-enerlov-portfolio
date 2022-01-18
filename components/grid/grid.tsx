@@ -24,7 +24,7 @@ export default function Grid({ allProjects }: IGrid) {
                 <div className={classes.imageContainer}>
                   <Image data={project.featuredImage.responsiveImage} />
                   <div className={classes.overlay}>
-                    <Typography className={classes.text} variant="h4">
+                    <Typography className={classes.text} variant="h3">
                       {project.title}
                     </Typography>
                   </div>

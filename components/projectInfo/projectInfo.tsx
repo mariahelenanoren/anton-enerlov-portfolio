@@ -19,7 +19,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Client</Typography>
             {client.map((c, index) => (
-              <Typography className={classes.name} key={index} variant="h4">
+              <Typography className={classes.name} key={index} variant="h3">
                 {c.name}
               </Typography>
             ))}
@@ -29,7 +29,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Production company</Typography>
             {productionCompany.map((pc, index) => (
-              <Typography className={classes.name} key={index} variant="h4">
+              <Typography className={classes.name} key={index} variant="h3">
                 {pc.name}
               </Typography>
             ))}
@@ -39,7 +39,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Producer</Typography>
             {producer.map((p, index) => (
-              <Typography className={classes.name} variant="h4" key={index}>
+              <Typography className={classes.name} variant="h3" key={index}>
                 {p.name}
               </Typography>
             ))}
@@ -49,7 +49,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Agency</Typography>
             {agency.map((a, index) => (
-              <Typography className={classes.name} variant="h4" key={index}>
+              <Typography className={classes.name} variant="h3" key={index}>
                 {a.name}
               </Typography>
             ))}
@@ -59,7 +59,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Model</Typography>
             {model.map((m, index) => (
-              <Typography className={classes.name} variant="h4" key={index}>
+              <Typography className={classes.name} variant="h3" key={index}>
                 {m.name}
               </Typography>
             ))}
@@ -69,7 +69,7 @@ export default function ProjectInfo({
           <div className={classes.info}>
             <Typography variant="overline">Retouch</Typography>
             {retouch.map((r, index) => (
-              <Typography className={classes.name} variant="h4" key={index}>
+              <Typography className={classes.name} variant="h3" key={index}>
                 {r.name}
               </Typography>
             ))}

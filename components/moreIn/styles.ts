@@ -47,7 +47,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   projectTitle: {
-    fontWeight: 500,
     textTransform: 'uppercase',
   },
 }));
