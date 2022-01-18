@@ -2,9 +2,12 @@ import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
-  sectionContainer: {
+  moreInContainer: {
     textAlign: 'center',
     marginTop: '10rem',
+    [theme.breakpoints.only('xs')]: {
+      marginTop: '7.5rem',
+    },
   },
   itemContent: {
     position: 'relative',
@@ -21,6 +24,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     marginBottom: '4rem',
+    [theme.breakpoints.only('xs')]: {
+      marginBottom: '2.5rem',
+    },
   },
   image: {
     height: '100%',

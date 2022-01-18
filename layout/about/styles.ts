@@ -21,6 +21,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '8rem',
     position: 'relative',
     paddingBottom: '56.25%',
+    [theme.breakpoints.only('xs')]: {
+      marginTop: '5rem',
+    },
   },
   video: {
     width: '100%',

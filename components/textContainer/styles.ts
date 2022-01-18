@@ -7,5 +7,17 @@ export const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: '45rem',
     marginRight: 'auto',
     marginLeft: 'auto',
+    textAlign: 'center',
+    '& p': {
+      margin: 0,
+      fontSize: 18,
+      lineHeight: '170%',
+      [theme.breakpoints.only('xs')]: {
+        fontSize: 16,
+      },
+    },
+    '& a': {
+      textDecoration: 'underline',
+    },
   },
 }));
