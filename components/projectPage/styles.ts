@@ -8,20 +8,18 @@ export const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
   },
-
   titleContainer: {
-    padding: '8rem',
+    marginTop: '8rem',
+    marginBottom: '4rem',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    [theme.breakpoints.only('xs')]: {
+      marginTop: '5rem',
+      marginBottom: '2.5rem',
+    },
   },
-
-  category: {
-    fontSize: '12px',
-    textTransform: 'uppercase',
-  },
-
   firstImage: {
     width: '100%',
   },
