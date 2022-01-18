@@ -13,7 +13,7 @@ export default function Page({
         <title>{title}</title>
         <meta name="description" content={description}></meta>
       </Head>
-      <div>{children}</div>
+      <>{children}</>
     </>
   );
 }
