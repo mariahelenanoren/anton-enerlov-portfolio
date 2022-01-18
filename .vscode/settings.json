@@ -28,6 +28,5 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"eslint.validate": [],
 	"workbench.editor.untitled.hint": "hidden",
-	"window.zoomLevel": 0,
 	"git.confirmSync": false
 }

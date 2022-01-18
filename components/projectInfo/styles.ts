@@ -6,14 +6,18 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    padding: '4rem 0',
+    margin: '4rem 0',
+    [theme.breakpoints.only('xs')]: {
+      margin: '3rem 0',
+    },
   },
   info: {
     width: 300,
-    margin: '2rem 0',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    margin: '2rem auto',
     textAlign: 'center',
+    [theme.breakpoints.only('xs')]: {
+      margin: '0.5rem auto',
+    },
   },
   name: {
     marginBottom: '1rem',

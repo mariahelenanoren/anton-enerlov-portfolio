@@ -5,6 +5,7 @@ export const PROJECT_QUERY = gql`
     allProjects(
       filter: { title: { matches: { pattern: $title, caseSensitive: false } } }
     ) {
+      id
       title
       categoryTitle
       featuredImage {

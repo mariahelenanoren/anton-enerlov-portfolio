@@ -28,7 +28,7 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
     <>
       {suggestedProjects[0] ? (
         <PaddingComponent>
-          <div className={classes.sectionContainer}>
+          <div className={classes.moreInContainer}>
             <Typography variant="overline">Photography</Typography>
             <Typography
               className={classes.title}
@@ -49,7 +49,7 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
                       />
                       <div className={classes.overlay}>
                         <Typography
-                          variant="h4"
+                          variant="h3"
                           className={classes.projectTitle}
                         >
                           {project.title}

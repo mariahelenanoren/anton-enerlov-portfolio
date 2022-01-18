@@ -10,6 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    padding: 0,
   },
   logoContainer: {
     zIndex: 10,

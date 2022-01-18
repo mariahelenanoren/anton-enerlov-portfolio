@@ -1,8 +1,7 @@
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
 import { Image } from 'react-datocms';
-import { ProjectTextContainer } from '../projectTextContainer';
 import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
@@ -21,7 +20,7 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
       <PaddingComponent>
         <div className={classes.titleContainer}>
           <Typography variant="overline">{project.categoryTitle}</Typography>
-          <Typography variant="h2" textAlign={'center'}>
+          <Typography variant="h1" textAlign={'center'}>
             {project.title}
           </Typography>
         </div>
@@ -38,7 +37,6 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
         agency={project.agency}
         retouch={project.retouch}
       />
-      <ProjectTextContainer></ProjectTextContainer>
       <ImageGrid images={project.images} />
       <MoreIn allProjects={allProjects} id={project.id} />
     </div>
