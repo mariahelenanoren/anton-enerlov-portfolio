@@ -10,15 +10,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: 'center',
   },
   aboutTitle: {
-    marginTop: '8rem',
-    marginBottom: '4rem',
+    marginTop: '6rem',
+    marginBottom: '3.5rem',
     [theme.breakpoints.only('xs')]: {
       marginTop: '5rem',
       marginBottom: '2.5rem',
     },
   },
   videoContainer: {
-    marginTop: '8rem',
+    marginTop: '6rem',
     position: 'relative',
     paddingBottom: '56.25%',
     [theme.breakpoints.only('xs')]: {

@@ -20,7 +20,7 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
       <PaddingComponent>
         <div className={classes.titleContainer}>
           <Typography variant="overline">{project.categoryTitle}</Typography>
-          <Typography variant="h2" textAlign={'center'}>
+          <Typography variant="h1" textAlign={'center'}>
             {project.title}
           </Typography>
         </div>

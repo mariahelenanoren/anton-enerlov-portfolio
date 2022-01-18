@@ -16,6 +16,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
       height: 380,
     },
   },
+  landingTitle: {
+    fontSize: '64px',
+    [theme.breakpoints.only('sm')]: {
+      fontSize: '48px',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '30px',
+    },
+  },
   imageContainer: {
     position: 'absolute',
     top: '-6rem',

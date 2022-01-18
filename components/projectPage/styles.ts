@@ -9,8 +9,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'column',
   },
   titleContainer: {
-    marginTop: '8rem',
-    marginBottom: '4rem',
+    marginTop: '6rem',
+    marginBottom: '3.5rem',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

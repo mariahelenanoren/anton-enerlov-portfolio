@@ -19,14 +19,14 @@ export const theme = createTheme({
     h1: {
       fontSize: 48,
       '@media (max-width: 600px)': {
-        fontSize: 32,
+        fontSize: 30,
       },
       fontWeight: 700,
     },
     h2: {
       fontSize: 34,
       '@media (max-width: 900px)': {
-        fontSize: 32,
+        fontSize: 30,
       },
       '@media (max-width: 600px)': {
         fontSize: 26,
@@ -61,6 +61,7 @@ export const theme = createTheme({
     body2: {
       fontSize: 16,
       lineHeight: '170%',
+      color: '#A8A8A8',
       '@media (max-width: 600px)': {
         fontSize: 14,
       },
