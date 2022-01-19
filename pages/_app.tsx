@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <ScrollToTop />
+      <ScrollToTop loading={loading} />
       {loading ? <Loader /> : <Component {...pageProps} />}
     </ThemeProvider>
   );
