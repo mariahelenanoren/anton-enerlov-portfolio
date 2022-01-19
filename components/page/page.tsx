@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import { IPage } from './types';
+import { ScrollToTop } from '../scrollToTop';
 
 export default function Page({
   children,
@@ -13,6 +14,7 @@ export default function Page({
         <title>{title}</title>
         <meta name="description" content={description}></meta>
       </Head>
+      <ScrollToTop />
       <>{children}</>
     </>
   );
