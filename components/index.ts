@@ -12,20 +12,22 @@ import { ProjectPage } from './projectPage';
 import { ImageGrid } from './imageGrid';
 import { AnimationContainer } from './animationContainer';
 import { Page } from './page';
+import { NoRightClick } from './noRightClick';
 
 export {
-  PaddingComponent,
-  Header,
-  Footer,
-  Landing,
-  Grid,
-  TextContainer,
-  SelectedClients,
-  ProjectTextContainer,
-  Loader,
-  ProjectInfo,
-  ProjectPage,
-  ImageGrid,
-  AnimationContainer,
-  Page,
+	PaddingComponent,
+	Header,
+	Footer,
+	Landing,
+	Grid,
+	TextContainer,
+	SelectedClients,
+	ProjectTextContainer,
+	Loader,
+	ProjectInfo,
+	ProjectPage,
+	ImageGrid,
+	AnimationContainer,
+	Page,
+	NoRightClick,
 };
