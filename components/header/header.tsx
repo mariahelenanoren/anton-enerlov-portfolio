@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
 import {
-  Box,
   AppBar,
   Toolbar,
   Theme,
   useMediaQuery,
-  Link,
+  Link as MuiLink,
 } from '@mui/material';
+import Link from 'next/link';
 import Image from 'next/image';
 import { PaddingComponent } from '../paddingComponent';
 import { ISocialLinks } from './types';
@@ -48,15 +48,15 @@ export default function Header({ socialLinks }: ISocialLinks) {
         elevation={0}
       >
         <Toolbar className={classes.toolbar}>
-          <Link href="/">
-            <div className={classes.logoContainer}>
+          <Link href="/" passHref>
+            <MuiLink className={classes.logoContainer}>
               <Image
                 layout="fill"
                 objectFit="contain"
                 alt="logotype"
                 src="/assets/logo-cropped.png"
               ></Image>
-            </div>
+            </MuiLink>
           </Link>
           <div>
             {!mobile ? (

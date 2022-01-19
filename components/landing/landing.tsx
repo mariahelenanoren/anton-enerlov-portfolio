@@ -1,7 +1,14 @@
 import React from 'react';
-import { Grid, Link, Theme, Typography, useMediaQuery } from '@mui/material';
+import {
+  Grid,
+  Link as MuiLink,
+  Theme,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { Image } from 'react-datocms';
+import Link from 'next/link';
 
 import { ILanding } from '../../lib/gql/landing';
 import { PaddingComponent } from '../paddingComponent';
@@ -44,11 +51,13 @@ export default function Landing({ landing }: ILanding) {
               </Grid>
               <Grid item className={classes.iconContainer}>
                 {landing.socialLinks.map((link, index) => (
-                  <Link href={link.link} key={index} className={classes.link}>
-                    <Image
-                      data={link.icon.responsiveImage}
-                      className={classes.icon}
-                    />
+                  <Link href={link.link} key={index} passHref>
+                    <MuiLink className={classes.link}>
+                      <Image
+                        data={link.icon.responsiveImage}
+                        className={classes.icon}
+                      />
+                    </MuiLink>
                   </Link>
                 ))}
               </Grid>

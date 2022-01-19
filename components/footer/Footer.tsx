@@ -1,10 +1,11 @@
-import { Box, Link, Typography } from '@mui/material';
+import { Typography, Link as MuiLink } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Image as DatoImage } from 'react-datocms';
 import { PaddingComponent } from '..';
 import { useStyles } from './styles';
 import { IFooter } from './types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer({ footer }: IFooter) {
   const classes = useStyles();
@@ -30,11 +31,13 @@ export default function Footer({ footer }: IFooter) {
         </div>
         <div className={classes.iconsContainer}>
           {footer.socialLinks.map((link, index) => (
-            <Link key={index} href={link.link} className={classes.link}>
-              <DatoImage
-                data={link.icon.responsiveImage}
-                className={classes.socialIcons}
-              ></DatoImage>
+            <Link key={index} href={link.link} passHref>
+              <MuiLink className={classes.link}>
+                <DatoImage
+                  data={link.icon.responsiveImage}
+                  className={classes.socialIcons}
+                ></DatoImage>
+              </MuiLink>
             </Link>
           ))}
         </div>

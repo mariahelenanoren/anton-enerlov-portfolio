@@ -1,5 +1,6 @@
-import { Link } from '@mui/material';
+import { Link as MuiLink } from '@mui/material';
 import classNames from 'classnames';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
 import { useStyles } from './styles';
@@ -11,19 +12,19 @@ export default function DesktopMenu({ pages }: IDesktopMenu) {
   return (
     <>
       {pages.map((page, index) => (
-        <Link
-          variant="body2"
-          underline="none"
-          href={page.href}
-          className={classNames(
-            classes.link,
-            checkIfCurrentPage(page.href, router.pathname)
-              ? classes.active
-              : undefined
-          )}
-          key={index}
-        >
-          {page.title}
+        <Link href={page.href} passHref key={index}>
+          <MuiLink
+            variant="body2"
+            underline="none"
+            className={classNames(
+              classes.link,
+              checkIfCurrentPage(page.href, router.pathname)
+                ? classes.active
+                : undefined
+            )}
+          >
+            {page.title}
+          </MuiLink>
         </Link>
       ))}
     </>
