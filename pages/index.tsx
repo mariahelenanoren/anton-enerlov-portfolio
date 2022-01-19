@@ -1,18 +1,20 @@
 import { Landing, Grid, Page } from '../components';
 import { IFooter } from '../components/footer/types';
 import { Layout } from '../layout/layout';
-import { getLandingData, getFooterData, getProjectsData } from '../lib/gql';
+import { getLandingData, getFooterData, getOutdoorPageData } from '../lib/gql';
 import { ILanding } from '../lib/gql/landing/types';
 import { IProject } from '../lib/gql/project/types';
 
 interface IOutdoorPage extends ILanding, IFooter {
-  allProjects: IProject[];
+  outdoorPage: {
+    projects: IProject[];
+  };
 }
 
 export default function OutdoorPage({
   landing,
   footer,
-  allProjects,
+  outdoorPage,
 }: IOutdoorPage) {
   return (
     <Page
@@ -21,7 +23,7 @@ export default function OutdoorPage({
     >
       <Layout footer={footer}>
         <Landing landing={landing} />
-        <Grid allProjects={allProjects} />
+        <Grid projects={outdoorPage.projects} />
       </Layout>
     </Page>
   );
@@ -29,10 +31,10 @@ export default function OutdoorPage({
 
 export async function getStaticProps() {
   const { landing } = await getLandingData();
-  const { allProjects } = await getProjectsData('Outdoor');
+  const { outdoorPage } = await getOutdoorPageData();
   const { footer } = await getFooterData();
 
   return {
-    props: { landing, footer, allProjects },
+    props: { landing, footer, outdoorPage },
   };
 }
