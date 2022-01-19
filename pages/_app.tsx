@@ -12,12 +12,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     router.events.on('routeChangeStart', (url) => {
-      window.scrollTo(0, 0);
       SetLoading(true);
     });
 
     router.events.on('routeChangeComplete', (url) => {
       SetLoading(false);
+      window.scrollTo(0, 0);
     });
   }, [router.events]);
 
