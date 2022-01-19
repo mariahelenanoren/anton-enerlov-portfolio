@@ -5,7 +5,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../styles/theme/theme';
 import { Loader } from '../components';
 import '../styles/globals.css';
-import Head from 'next/head';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [loading, SetLoading] = useState(false);
@@ -13,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     router.events.on('routeChangeStart', (url) => {
+      window.scrollTo(0, 0);
       SetLoading(true);
     });
 
