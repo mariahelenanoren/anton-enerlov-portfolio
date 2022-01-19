@@ -6,6 +6,7 @@ import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
+import { useEffect } from 'react';
 
 interface IProjectPage {
   project: IProject;
@@ -14,6 +15,10 @@ interface IProjectPage {
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.projectContainer}>

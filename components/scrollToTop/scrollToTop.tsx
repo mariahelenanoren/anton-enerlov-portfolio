@@ -7,6 +7,7 @@ export default function ScrollToTop() {
       left: 0,
       behavior: 'smooth',
     });
+    console.log(window.scrollY);
   }, []);
 
   return null;
