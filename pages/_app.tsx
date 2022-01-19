@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../styles/theme/theme';
 import { Loader } from '../components';
 import '../styles/globals.css';
+import { ScrollToTop } from '../components/scrollToTop';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [loading, SetLoading] = useState(false);
@@ -17,12 +18,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
     router.events.on('routeChangeComplete', (url) => {
       SetLoading(false);
-      window.scrollTo(0, 0);
     });
   }, [router.events]);
 
   return (
     <ThemeProvider theme={theme}>
+      <ScrollToTop />
       {loading ? <Loader /> : <Component {...pageProps} />}
     </ThemeProvider>
   );
