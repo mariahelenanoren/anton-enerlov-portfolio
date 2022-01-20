@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Typography } from '@mui/material';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
@@ -6,6 +7,7 @@ import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
+import { PreviewModal } from '../previewModal';
 
 interface IProjectPage {
   project: IProject;
@@ -14,6 +16,17 @@ interface IProjectPage {
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
   const classes = useStyles();
+  const [isPreviewOpen, setPreviewOpen] = useState(false);
+
+  const handleClosePreview = () => {
+    setPreviewOpen(false);
+  };
+
+  const handleOpenPreview = () => {
+    if (!isPreviewOpen) {
+      setPreviewOpen(true);
+    }
+  };
 
   return (
     <div className={classes.projectContainer}>
@@ -25,10 +38,17 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
           </Typography>
         </div>
       </PaddingComponent>
-      <Image
-        data={project.featuredImage.responsiveImage}
-        className={classes.firstImage}
-      />
+      <PreviewModal
+        image={project.featuredImage}
+        isOpen={isPreviewOpen}
+        handleClose={handleClosePreview}
+        handleClick={handleOpenPreview}
+      >
+        <Image
+          data={project.featuredImage.responsiveImage}
+          className={classes.firstImage}
+        />
+      </PreviewModal>
       <ProjectInfo
         client={project.client}
         productionCompany={project.productionCompany}
