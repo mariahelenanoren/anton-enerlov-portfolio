@@ -35,8 +35,8 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
             >{`More in ${suggestedProjects[0].categoryTitle.toLowerCase()}`}</Typography>
             <Grid container direction="row" spacing={3}>
               {suggestedProjects.map((project, index) => (
-                <Link key={index} href={`/${transformToRoute(project.title)}`}>
-                  <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={4} key={index}>
+                  <Link href={`/${transformToRoute(project.title)}`}>
                     <div className={classes.itemContent}>
                       <Image
                         className={classNames(classes.image, 'image')}
@@ -51,8 +51,8 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
                         </Typography>
                       </div>
                     </div>
-                  </Grid>
-                </Link>
+                  </Link>
+                </Grid>
               ))}
             </Grid>
           </div>
