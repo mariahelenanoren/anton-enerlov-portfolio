@@ -9,39 +9,40 @@ import { IProject } from '../../lib/gql/project/types';
 import { AnimationContainer } from '../animationContainer';
 
 interface IProjectPage {
-  project: IProject;
-  allProjects: IProject[];
+	project: IProject;
+	allProjects: IProject[];
 }
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  return (
-    <div className={classes.projectContainer}>
-      <PaddingComponent>
-        <div className={classes.titleContainer}>
-          <Typography variant="overline">{project.categoryTitle}</Typography>
-          <Typography variant="h1" textAlign={'center'}>
-            {project.title}
-          </Typography>
-        </div>
-      </PaddingComponent>
-      <AnimationContainer>
-        <Image
-          data={project.featuredImage.responsiveImage}
-          className={classes.firstImage}
-        />
-      </AnimationContainer>
-      <ProjectInfo
-        client={project.client}
-        productionCompany={project.productionCompany}
-        model={project.model}
-        producer={project.producer}
-        agency={project.agency}
-        retouch={project.retouch}
-      />
-      <ImageGrid images={project.images} />
-      <MoreIn allProjects={allProjects} id={project.id} />
-    </div>
-  );
+	return (
+		<div className={classes.projectContainer}>
+			<PaddingComponent>
+				<div className={classes.titleContainer}>
+					<Typography variant="overline">{project.categoryTitle}</Typography>
+					<Typography variant="h1" textAlign={'center'}>
+						{project.title}
+					</Typography>
+				</div>
+			</PaddingComponent>
+			<AnimationContainer>
+				<Image
+					data={project.featuredImage.responsiveImage}
+					className={classes.firstImage}
+				/>
+			</AnimationContainer>
+			<ProjectInfo
+				client={project.client}
+				product={project.product}
+				productionCompany={project.productionCompany}
+				model={project.model}
+				producer={project.producer}
+				agency={project.agency}
+				retouch={project.retouch}
+			/>
+			<ImageGrid images={project.images} />
+			<MoreIn allProjects={allProjects} id={project.id} />
+		</div>
+	);
 }
