@@ -12,7 +12,6 @@ import { ProjectPage } from './projectPage';
 import { ImageGrid } from './imageGrid';
 import { AnimationContainer } from './animationContainer';
 import { Page } from './page';
-import { NoRightClick } from './noRightClick';
 
 export {
 	PaddingComponent,
@@ -29,5 +28,4 @@ export {
 	ImageGrid,
 	AnimationContainer,
 	Page,
-	NoRightClick,
 };

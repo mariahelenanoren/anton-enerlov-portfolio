@@ -6,7 +6,9 @@ import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
-import { NoRightClick } from '../noRightClick';
+import { DisableCopy } from '../disableCopy';
+import { useEffect } from 'react';
+import { ImageSearchOutlined } from '@mui/icons-material';
 
 interface IProjectPage {
 	project: IProject;
@@ -26,21 +28,21 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
 					</Typography>
 				</div>
 			</PaddingComponent>
-			<NoRightClick>
+			<DisableCopy>
 				<Image
 					data={project.featuredImage.responsiveImage}
 					className={classes.firstImage}
 				/>
-				<ProjectInfo
-					client={project.client}
-					productionCompany={project.productionCompany}
-					model={project.model}
-					producer={project.producer}
-					agency={project.agency}
-					retouch={project.retouch}
-				/>
-				<ImageGrid images={project.images} />
-			</NoRightClick>
+			</DisableCopy>
+			<ProjectInfo
+				client={project.client}
+				productionCompany={project.productionCompany}
+				model={project.model}
+				producer={project.producer}
+				agency={project.agency}
+				retouch={project.retouch}
+			/>
+			<ImageGrid images={project.images} />
 			<MoreIn allProjects={allProjects} id={project.id} />
 		</div>
 	);
