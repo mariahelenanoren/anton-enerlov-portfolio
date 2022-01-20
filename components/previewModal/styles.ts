@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   imageContainer: {
     '& img': {
       maxWidth: '80vw',
-      maxHeight: '80vh',
+      maxHeight: '85vh',
       objectFit: 'contain',
     },
   },
