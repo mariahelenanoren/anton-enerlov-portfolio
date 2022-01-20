@@ -2,6 +2,9 @@ import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
+  previewModal: {
+    cursor: 'pointer',
+  },
   modal: {
     display: 'flex',
     justifyContent: 'center',
