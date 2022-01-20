@@ -12,7 +12,7 @@ export default function Page({
 
   useEffect(() => {
     router.events.on('routeChangeComplete', () => {
-      window.scroll(0, 0);
+      document.body.scroll(0, 0);
     });
   }, [router.events]);
 
