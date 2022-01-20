@@ -4,25 +4,25 @@ import { IPage } from './types';
 import { useRouter } from 'next/router';
 
 export default function Page({
-  children,
-  title,
-  description,
+	children,
+	title,
+	description,
 }: PropsWithChildren<IPage>) {
-  const router = useRouter();
+	const router = useRouter();
 
-  useEffect(() => {
-    router.events.on('routeChangeComplete', () => {
-      document.body.scroll(0, 0);
-    });
-  }, [router.events]);
+	useEffect(() => {
+		router.events.on('routeChangeComplete', () => {
+			document.body.scroll(0, 0);
+		});
+	}, [router.events]);
 
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description}></meta>
-      </Head>
-      <>{children}</>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description}></meta>
+			</Head>
+			<>{children}</>
+		</>
+	);
 }
