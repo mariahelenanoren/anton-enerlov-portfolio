@@ -22,7 +22,7 @@ export default function PreviewModal({
   };
 
   return (
-    <div onClick={handleOpenModal}>
+    <div className={classes.previewModal} onClick={handleOpenModal}>
       {children}
       <Modal
         open={isOpen}

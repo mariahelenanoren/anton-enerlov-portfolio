@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
-import {
-  Box,
-  AppBar,
-  Toolbar,
-  Theme,
-  useMediaQuery,
-  Link,
-} from '@mui/material';
+import { AppBar, Toolbar, Theme, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import { PaddingComponent } from '../paddingComponent';
 import { ISocialLinks } from './types';
 import { useStyles } from './styles';
 import { DesktopMenu, MobileMenu } from '../menu';
+import Link from 'next/link';
 
 export default function Header({ socialLinks }: ISocialLinks) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -48,16 +42,16 @@ export default function Header({ socialLinks }: ISocialLinks) {
         elevation={0}
       >
         <Toolbar className={classes.toolbar}>
-          <Link href="/">
-            <div className={classes.logoContainer}>
+          <div className={classes.logoContainer}>
+            <Link href="/" passHref>
               <Image
                 layout="fill"
                 objectFit="contain"
                 alt="logotype"
                 src="/assets/logo-cropped.png"
               ></Image>
-            </div>
-          </Link>
+            </Link>
+          </div>
           <div>
             {!mobile ? (
               <DesktopMenu pages={pages} />
