@@ -22,5 +22,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   firstImage: {
     width: '100%',
+    minWidth: '100vw',
   },
 }));

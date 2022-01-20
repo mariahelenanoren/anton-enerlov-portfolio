@@ -1,4 +1,10 @@
-import { getFooterData, getProjectData, getProjectsData } from '../lib/gql';
+import {
+  getFooterData,
+  getLifestylePageData,
+  getOutdoorPageData,
+  getProjectData,
+  getProjectsData,
+} from '../lib/gql';
 import { ProjectPage as Project } from '../components/projectPage';
 import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
@@ -40,8 +46,16 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     (context.params?.project as string) || ''
   );
   const filteredProjects = await getProjectData(projectTitle);
-  const project = filteredProjects.allProjects[0];
-  const { allProjects } = await getProjectsData(project.categoryTitle);
+  const project: IProject = filteredProjects.allProjects[0];
+
+  let allProjects;
+  if (project.categoryTitle.toLowerCase() === 'outdoor') {
+    const { outdoorPage } = await getOutdoorPageData();
+    allProjects = outdoorPage.projects;
+  } else {
+    const { lifestylePage } = await getLifestylePageData();
+    allProjects = lifestylePage.projects;
+  }
 
   return {
     props: { footer, project, allProjects },
@@ -49,7 +63,12 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-  const { allProjects }: { allProjects: IProject[] } = await getProjectsData();
+  const { outdoorPage } = await getOutdoorPageData();
+  const { lifestylePage } = await getLifestylePageData();
+  const outdoorProjects = outdoorPage.projects;
+  const lifestyleProjects = lifestylePage.projects;
+  const allProjects = [...outdoorProjects, ...lifestyleProjects];
+
   const paths = allProjects.map((project) => ({
     params: { project: transformToRoute(project.title) },
   }));

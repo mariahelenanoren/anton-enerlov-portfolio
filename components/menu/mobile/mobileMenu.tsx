@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Backdrop, IconButton, Link, Modal } from '@mui/material';
+import { Backdrop, IconButton, Link as MuiLink } from '@mui/material';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { useStyles } from './styles';
@@ -8,6 +8,7 @@ import { Image } from 'react-datocms';
 import { IMobileMenu } from './types';
 import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
 import { stopBodyScroll } from '../../../lib/helpers/stopBodyScroll';
+import Link from 'next/link';
 
 export default function MobileMenu({
   isOpen,
@@ -38,31 +39,37 @@ export default function MobileMenu({
         <>
           <div className={classes.menuContainer}>
             {pages.map((page, index) => (
-              <Link
-                onClick={handleClick}
-                variant="h2"
-                underline="none"
-                href={page.href}
-                className={classNames(
-                  classes.link,
-                  checkIfCurrentPage(page.href, router.pathname)
-                    ? classes.active
-                    : classes.inActive
-                )}
-                key={index}
-              >
-                {page.title}
+              <Link href={page.href} key={index} passHref>
+                <MuiLink
+                  onClick={handleClick}
+                  variant="h2"
+                  underline="none"
+                  href={page.href}
+                  className={classNames(
+                    classes.link,
+                    checkIfCurrentPage(page.href, router.pathname)
+                      ? classes.active
+                      : classes.inActive
+                  )}
+                >
+                  {page.title}
+                </MuiLink>
               </Link>
             ))}
           </div>
           <div className={classes.socialContainer}>
             {socialLinks.map((link, index) => (
-              <Link href={link.link} key={index} className={classes.iconLink}>
+              <MuiLink
+                href={link.link}
+                key={index}
+                className={classes.iconLink}
+                target="_blank"
+              >
                 <Image
                   data={link.icon.responsiveImage}
                   className={classes.icon}
                 />
-              </Link>
+              </MuiLink>
             ))}
           </div>
         </>

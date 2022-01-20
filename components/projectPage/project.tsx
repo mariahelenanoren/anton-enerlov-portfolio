@@ -6,9 +6,9 @@ import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
+import { PreviewModal } from '../previewModal';
+import { AnimationContainer } from '../animationContainer';
 import { DisableCopy } from '../disableCopy';
-import { useEffect } from 'react';
-import { ImageSearchOutlined } from '@mui/icons-material';
 
 interface IProjectPage {
 	project: IProject;
@@ -28,16 +28,21 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
 					</Typography>
 				</div>
 			</PaddingComponent>
-			<DisableCopy>
-				<Image
-					data={project.featuredImage.responsiveImage}
-					className={classes.firstImage}
-				/>
-			</DisableCopy>
+			<AnimationContainer>
+				<PreviewModal image={project.featuredImage}>
+					<DisableCopy>
+						<Image
+							data={project.featuredImage.responsiveImage}
+							className={classes.firstImage}
+						/>
+					</DisableCopy>
+				</PreviewModal>
+			</AnimationContainer>
 			<ProjectInfo
 				client={project.client}
 				productionCompany={project.productionCompany}
 				model={project.model}
+				product={project.product}
 				producer={project.producer}
 				agency={project.agency}
 				retouch={project.retouch}

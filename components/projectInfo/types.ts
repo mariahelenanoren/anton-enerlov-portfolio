@@ -2,6 +2,9 @@ export interface IProjectInfo {
 	client: {
 		name?: string;
 	}[];
+	product: {
+		name?: string;
+	}[];
 	productionCompany: {
 		name?: string;
 	}[];
