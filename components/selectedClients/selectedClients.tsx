@@ -24,7 +24,6 @@ export default function SelectedClients({
 
   return (
     <div className={classes.selectedContainer}>
-      <Typography variant="overline">{clientCategory}</Typography>
       <Typography variant="h2" className={classes.title}>
         {clientTitle}
       </Typography>
