@@ -47,6 +47,7 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
 				agency={project.agency}
 				retouch={project.retouch}
 			/>
+
 			<ImageGrid images={project.images} />
 			<MoreIn allProjects={allProjects} id={project.id} />
 		</div>

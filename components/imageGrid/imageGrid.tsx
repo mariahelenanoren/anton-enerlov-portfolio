@@ -4,6 +4,7 @@ import { IProjectImages } from './types';
 import { Image } from 'react-datocms';
 import { Masonry } from '@mui/lab';
 import { PreviewModal } from '../previewModal';
+import { DisableCopy } from '../disableCopy';
 
 export default function ImageGrid({ images }: IProjectImages) {
 	const theme = useTheme();
@@ -15,7 +16,9 @@ export default function ImageGrid({ images }: IProjectImages) {
 				{images.map((image, index) => (
 					<AnimationContainer key={index}>
 						<PreviewModal image={image}>
-							<Image data={image.responsiveImage} />
+							<DisableCopy>
+								<Image data={image.responsiveImage} />
+							</DisableCopy>
 						</PreviewModal>
 					</AnimationContainer>
 				))}
