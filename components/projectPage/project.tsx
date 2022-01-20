@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Typography } from '@mui/material';
 import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
@@ -17,17 +16,6 @@ interface IProjectPage {
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
   const classes = useStyles();
-  const [isPreviewOpen, setPreviewOpen] = useState(false);
-
-  const handleClosePreview = () => {
-    setPreviewOpen(false);
-  };
-
-  const handleOpenPreview = () => {
-    if (!isPreviewOpen) {
-      setPreviewOpen(true);
-    }
-  };
 
   return (
     <div className={classes.projectContainer}>
@@ -40,12 +28,7 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
         </div>
       </PaddingComponent>
       <AnimationContainer>
-        <PreviewModal
-          image={project.featuredImage}
-          isOpen={isPreviewOpen}
-          handleClose={handleClosePreview}
-          handleClick={handleOpenPreview}
-        >
+        <PreviewModal image={project.featuredImage}>
           <Image
             data={project.featuredImage.responsiveImage}
             className={classes.firstImage}

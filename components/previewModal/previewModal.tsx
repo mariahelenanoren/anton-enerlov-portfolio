@@ -1,25 +1,32 @@
+import { PropsWithChildren, useState } from 'react';
 import { Close } from '@mui/icons-material';
 import { Backdrop, Fade, Modal } from '@mui/material';
-import { PropsWithChildren } from 'react';
 import { Image } from 'react-datocms';
-import { useStyles } from './styles';
 import { IPreviewModal } from './types';
+import { useStyles } from './styles';
 
 export default function PreviewModal({
   children,
-  isOpen,
   image,
-  handleClose,
-  handleClick,
 }: PropsWithChildren<IPreviewModal>) {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+  const handleOpenModal = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  };
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleOpenModal}>
       {children}
       <Modal
         open={isOpen}
-        onClose={handleClose}
+        onClose={handleCloseModal}
         className={classes.modal}
         disableAutoFocus={true}
         BackdropComponent={Backdrop}
@@ -34,7 +41,7 @@ export default function PreviewModal({
             <div className={classes.imageContainer}>
               <Image data={image.responsiveImage}></Image>
             </div>
-            <Close className={classes.closeIcon} onClick={handleClose} />
+            <Close className={classes.closeIcon} onClick={handleCloseModal} />
           </div>
         </Fade>
       </Modal>
