@@ -1,5 +1,6 @@
-import { Grid, Typography, Link } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import classNames from 'classnames';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Image } from 'react-datocms';
 import { PaddingComponent } from '..';
@@ -19,7 +20,7 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
   useEffect(() => {
     const filteredProjects = allProjects.filter((project) => project.id !== id);
     const shuffledProjects = filteredProjects.sort(() => 0.5 - Math.random());
-    const projects = shuffledProjects.slice(0, 3);
+    const projects = shuffledProjects.slice(0, 4);
     setSuggestedProjects(projects);
   }, [allProjects, id]);
 
@@ -35,8 +36,12 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
             >{`More in ${suggestedProjects[0].categoryTitle.toLowerCase()}`}</Typography>
             <Grid container direction="row" spacing={3}>
               {suggestedProjects.map((project, index) => (
-                <Grid item xs={12} md={4} key={index}>
-                  <Link href={`/${transformToRoute(project.title)}`}>
+                <Link
+                  key={index}
+                  href={`/${transformToRoute(project.title)}`}
+                  passHref
+                >
+                  <Grid item xs={12} md={4}>
                     <div className={classes.itemContent}>
                       <Image
                         className={classNames(classes.image, 'image')}
@@ -51,8 +56,8 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
                         </Typography>
                       </div>
                     </div>
-                  </Link>
-                </Grid>
+                  </Grid>
+                </Link>
               ))}
             </Grid>
           </div>
