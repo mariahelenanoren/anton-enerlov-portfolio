@@ -1,4 +1,10 @@
-import { getFooterData, getProjectData, getProjectsData } from '../lib/gql';
+import {
+  getFooterData,
+  getLifestylePageData,
+  getOutdoorPageData,
+  getProjectData,
+  getProjectsData,
+} from '../lib/gql';
 import { ProjectPage as Project } from '../components/projectPage';
 import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
@@ -49,7 +55,12 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-  const { allProjects }: { allProjects: IProject[] } = await getProjectsData();
+  const { outdoorPage } = await getOutdoorPageData();
+  const { lifestylePage } = await getLifestylePageData();
+  const outdoorProjects = outdoorPage.projects;
+  const lifestyleProjects = lifestylePage.projects;
+  const allProjects = [...outdoorProjects, ...lifestyleProjects];
+
   const paths = allProjects.map((project) => ({
     params: { project: transformToRoute(project.title) },
   }));

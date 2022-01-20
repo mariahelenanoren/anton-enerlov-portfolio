@@ -8,6 +8,7 @@ import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
 import { PreviewModal } from '../previewModal';
+import { AnimationContainer } from '../animationContainer';
 
 interface IProjectPage {
   project: IProject;
@@ -38,21 +39,24 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
           </Typography>
         </div>
       </PaddingComponent>
-      <PreviewModal
-        image={project.featuredImage}
-        isOpen={isPreviewOpen}
-        handleClose={handleClosePreview}
-        handleClick={handleOpenPreview}
-      >
-        <Image
-          data={project.featuredImage.responsiveImage}
-          className={classes.firstImage}
-        />
-      </PreviewModal>
+      <AnimationContainer>
+        <PreviewModal
+          image={project.featuredImage}
+          isOpen={isPreviewOpen}
+          handleClose={handleClosePreview}
+          handleClick={handleOpenPreview}
+        >
+          <Image
+            data={project.featuredImage.responsiveImage}
+            className={classes.firstImage}
+          />
+        </PreviewModal>
+      </AnimationContainer>
       <ProjectInfo
         client={project.client}
         productionCompany={project.productionCompany}
         model={project.model}
+        product={project.product}
         producer={project.producer}
         agency={project.agency}
         retouch={project.retouch}
