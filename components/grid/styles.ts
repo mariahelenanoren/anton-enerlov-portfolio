@@ -8,6 +8,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 5,
   },
   imageContainer: {
+    cursor: 'pointer',
     position: 'relative',
   },
   overlay: {
