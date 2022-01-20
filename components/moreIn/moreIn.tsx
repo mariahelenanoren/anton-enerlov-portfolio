@@ -20,7 +20,7 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
   useEffect(() => {
     const filteredProjects = allProjects.filter((project) => project.id !== id);
     const shuffledProjects = filteredProjects.sort(() => 0.5 - Math.random());
-    const projects = shuffledProjects.slice(0, 4);
+    const projects = shuffledProjects.slice(0, 3);
     setSuggestedProjects(projects);
   }, [allProjects, id]);
 
