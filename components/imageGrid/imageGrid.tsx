@@ -3,6 +3,7 @@ import { AnimationContainer, PaddingComponent } from '..';
 import { IProjectImages } from './types';
 import { Image } from 'react-datocms';
 import { Masonry } from '@mui/lab';
+import { PreviewModal } from '../previewModal';
 
 export default function ImageGrid({ images }: IProjectImages) {
   const theme = useTheme();
@@ -13,7 +14,9 @@ export default function ImageGrid({ images }: IProjectImages) {
       <Masonry columns={mobile ? 1 : 2} spacing={2}>
         {images.map((image, index) => (
           <AnimationContainer key={index}>
-            <Image data={image.responsiveImage} />
+            <PreviewModal image={image}>
+              <Image data={image.responsiveImage} />
+            </PreviewModal>
           </AnimationContainer>
         ))}
       </Masonry>
