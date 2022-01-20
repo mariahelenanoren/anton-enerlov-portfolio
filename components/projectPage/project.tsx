@@ -6,6 +6,7 @@ import { ProjectInfo } from '../projectInfo';
 import { ImageGrid } from '../imageGrid';
 import { MoreIn } from '../moreIn';
 import { IProject } from '../../lib/gql/project/types';
+import { AnimationContainer } from '../animationContainer';
 
 interface IProjectPage {
   project: IProject;
@@ -25,10 +26,12 @@ export default function ProjectPage({ project, allProjects }: IProjectPage) {
           </Typography>
         </div>
       </PaddingComponent>
-      <Image
-        data={project.featuredImage.responsiveImage}
-        className={classes.firstImage}
-      />
+      <AnimationContainer>
+        <Image
+          data={project.featuredImage.responsiveImage}
+          className={classes.firstImage}
+        />
+      </AnimationContainer>
       <ProjectInfo
         client={project.client}
         productionCompany={project.productionCompany}
