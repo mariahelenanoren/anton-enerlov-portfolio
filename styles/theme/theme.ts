@@ -21,7 +21,7 @@ export const theme = createTheme({
       '@media (max-width: 600px)': {
         fontSize: 30,
       },
-      fontWeight: 700,
+      fontWeight: 600,
     },
     h2: {
       fontSize: 34,
@@ -31,7 +31,7 @@ export const theme = createTheme({
       '@media (max-width: 600px)': {
         fontSize: 26,
       },
-      fontWeight: 700,
+      fontWeight: 600,
     },
     h3: {
       fontSize: 22,
