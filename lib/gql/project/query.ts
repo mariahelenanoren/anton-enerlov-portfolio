@@ -61,4 +61,13 @@ export const PROJECT_QUERY = gql`
 			}
 		}
 	}
+	video {
+        height
+        provider
+        providerUid
+        thumbnailUrl
+        title
+        url
+        width
+      }
 `;
