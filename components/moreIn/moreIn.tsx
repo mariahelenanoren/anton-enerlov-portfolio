@@ -29,7 +29,6 @@ export default function MoreIn({ allProjects, id }: IMoreIn) {
       {suggestedProjects[0] ? (
         <PaddingComponent>
           <div className={classes.moreInContainer}>
-            <Typography variant="overline">Photography</Typography>
             <Typography
               className={classes.title}
               variant="h2"
