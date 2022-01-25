@@ -44,7 +44,12 @@ export default function Landing({ landing }: ILanding) {
               </Grid>
               <Grid item className={classes.iconContainer}>
                 {landing.socialLinks.map((link, index) => (
-                  <Link href={link.link} key={index} className={classes.link}>
+                  <Link
+                    href={link.link}
+                    key={index}
+                    target="_blank"
+                    className={classes.link}
+                  >
                     <Image
                       data={link.icon.responsiveImage}
                       className={classes.icon}
