@@ -3,7 +3,7 @@ import { IProjectVideo } from './types';
 
 export default function ProjectVideo({ video }: IProjectVideo) {
 	const classes = useStyles();
-	console.log(video);
+
 	return (
 		<>
 			<div className={classes.videoContainer}>

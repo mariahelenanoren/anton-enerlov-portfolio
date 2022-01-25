@@ -18,7 +18,6 @@ interface IProjectPage {
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
 	const classes = useStyles();
-	console.log(project);
 
 	return (
 		<div className={classes.projectContainer}>
