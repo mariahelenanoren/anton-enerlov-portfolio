@@ -14,12 +14,16 @@ export const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     display: 'flex',
     alignItems: 'flex-start',
+    outline: 'none',
   },
   closeIcon: {
     marginLeft: '0.5rem',
+    cursor: 'pointer',
   },
   imageContainer: {
     '& img': {
+      width: 'auto !important',
+      height: 'auto !important',
       maxWidth: '80vw',
       maxHeight: '85vh',
       objectFit: 'contain',
