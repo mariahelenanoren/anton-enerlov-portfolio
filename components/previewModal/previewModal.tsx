@@ -5,8 +5,8 @@ import { Image } from 'react-datocms';
 import { IPreviewModal } from './types';
 import { useStyles } from './styles';
 import { DisableCopy } from '../disableCopy';
-import { ProjectVideo } from '../projectVideos';
-import { PaddingComponent } from '..';
+import { ExternalVideo } from '../externalVideo';
+import { PaddingComponent } from '../paddingComponent';
 
 export default function PreviewModal({
   children,
@@ -53,7 +53,7 @@ export default function PreviewModal({
                 ) : null}
                 {video ? (
                   <div className={classes.videoContainer}>
-                    <ProjectVideo stopPrevention={false} video={video} />
+                    <ExternalVideo preventPlay={false} video={video} />
                   </div>
                 ) : null}
                 <Close

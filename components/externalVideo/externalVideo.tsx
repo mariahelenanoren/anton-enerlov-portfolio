@@ -1,17 +1,13 @@
 import { useStyles } from './styles';
-import { IProjectVideo } from './types';
+import { IExternalVideo } from './types';
 
-export default function ProjectVideo({ video, stopPrevention }: IProjectVideo) {
+export default function ExternalVideo({ video, preventPlay }: IExternalVideo) {
   const classes = useStyles();
 
   return (
     <div className={classes.videoContainer}>
-      {stopPrevention ? <div className={classes.preventionDiv}></div> : null}
+      {preventPlay ? <div className={classes.preventionDiv}></div> : null}
       <iframe
-        onClick={(e) => {
-          e.preventDefault();
-          return false;
-        }}
         className={classes.projectvideo}
         src={`https://www.youtube.com/embed/${video.providerUid}`}
         title="YouTube video player"

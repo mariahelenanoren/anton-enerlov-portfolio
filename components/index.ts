@@ -9,25 +9,25 @@ import { ProjectTextContainer } from './projectTextContainer';
 import { Loader } from './loader';
 import { ProjectInfo } from './projectInfo';
 import { ProjectPage } from './projectPage';
-import { ImageGrid } from './imageGrid';
+import { MediaGrid } from './mediaGrid';
 import { AnimationContainer } from './animationContainer';
 import { Page } from './page';
-import { ProjectVideo } from './projectVideos';
+import { ExternalVideo } from './externalVideo';
 
 export {
-	PaddingComponent,
-	Header,
-	Footer,
-	Landing,
-	Grid,
-	TextContainer,
-	SelectedClients,
-	ProjectTextContainer,
-	Loader,
-	ProjectInfo,
-	ProjectPage,
-	ImageGrid,
-	AnimationContainer,
-	Page,
-	ProjectVideo,
+  PaddingComponent,
+  Header,
+  Footer,
+  Landing,
+  Grid,
+  TextContainer,
+  SelectedClients,
+  ProjectTextContainer,
+  Loader,
+  ProjectInfo,
+  ProjectPage,
+  MediaGrid,
+  AnimationContainer,
+  Page,
+  ExternalVideo,
 };

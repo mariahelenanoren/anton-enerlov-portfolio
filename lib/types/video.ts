@@ -1,4 +1,4 @@
-export interface IProjectVideo {
+export interface IVideo {
   video: {
     height: number;
     width: number;
@@ -7,5 +7,4 @@ export interface IProjectVideo {
     thumbnailUrl: string;
     url: string;
   };
-  stopPrevention: boolean;
 }
