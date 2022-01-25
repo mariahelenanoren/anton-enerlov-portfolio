@@ -29,4 +29,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       objectFit: 'contain',
     },
   },
+  videoContainer: {
+    width: '80vw',
+  },
 }));
