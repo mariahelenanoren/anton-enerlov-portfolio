@@ -1,4 +1,5 @@
 import { ResponsiveImageType } from 'react-datocms';
+import { IProjectVideo } from '../../../components/projectVideos/types';
 
 export interface IProject {
 	id: string;
@@ -30,5 +31,15 @@ export interface IProject {
 	}[];
 	retouch: {
 		name?: string;
+	}[];
+	videos: {
+		video: {
+			height: number;
+			width: number;
+			provider: string;
+			providerUid: string;
+			thumbnailUrl: string;
+			url: string;
+		};
 	}[];
 }

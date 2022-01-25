@@ -59,6 +59,17 @@ export const PROJECT_QUERY = gql`
 			retouch {
 				name
 			}
+			videos {
+				video {
+					height
+					width
+					provider
+					providerUid
+					thumbnailUrl
+					title
+					url
+				}
+			}
 		}
 	}
 `;
