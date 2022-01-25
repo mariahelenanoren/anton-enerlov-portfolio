@@ -8,12 +8,16 @@ import { DisableCopy } from '../disableCopy';
 import { ProjectVideo } from '../projectVideos';
 
 export default function PreviewModal({
+
 	children,
 	image,
 	video,
+
+
 }: PropsWithChildren<IPreviewModal>) {
-	const classes = useStyles();
-	const [isOpen, setIsOpen] = useState(false);
+  const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
 
 	const handleCloseModal = () => {
 		setIsOpen(false);
@@ -54,4 +58,5 @@ export default function PreviewModal({
 			</Modal>
 		</div>
 	);
+
 }
