@@ -1,12 +1,13 @@
 import { useMediaQuery, useTheme } from '@mui/material';
 import { AnimationContainer, PaddingComponent } from '..';
-import { IProjectImages } from './types';
+import { IProjectMedia } from './types';
 import { Image } from 'react-datocms';
 import { Masonry } from '@mui/lab';
 import { PreviewModal } from '../previewModal';
 import { DisableCopy } from '../disableCopy';
+import { ProjectVideo } from '../projectVideos';
 
-export default function ImageGrid({ images }: IProjectImages) {
+export default function ImageGrid({ images, videos }: IProjectMedia) {
 	const theme = useTheme();
 	const mobile = useMediaQuery(theme.breakpoints.only('xs'));
 
@@ -20,6 +21,11 @@ export default function ImageGrid({ images }: IProjectImages) {
 								<Image data={image.responsiveImage} />
 							</DisableCopy>
 						</PreviewModal>
+					</AnimationContainer>
+				))}
+				{videos.map((video, index) => (
+					<AnimationContainer key={index}>
+						<ProjectVideo video={video.video} />
 					</AnimationContainer>
 				))}
 			</Masonry>
