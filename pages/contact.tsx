@@ -1,14 +1,22 @@
 import { Contact, Layout, Page } from '../layout';
-import { getContactData, getFooterData } from '../lib/gql';
-import { IContact, IFooter } from '../lib/types';
+import { getContactData, getFooterData, getSeoData } from '../lib/gql';
+import { IContact, IFooter, ISeo } from '../lib/types';
 
-interface IContactPage extends IFooter, IContact {}
+interface IContactPage extends IFooter, IContact, ISeo {}
 
-export default function ContactPage({ contactPage, footer }: IContactPage) {
+export default function ContactPage({
+  contactPage,
+  footer,
+  _site,
+}: IContactPage) {
   return (
     <Page
       title="Contact"
-      description="Feel free to contact me with any questions or business inquiries."
+      description={_site.globalSeo.fallbackSeo.description}
+      imageUrl={_site.globalSeo.fallbackSeo.image.url}
+      imageHeight={_site.globalSeo.fallbackSeo.image.height}
+      imageWidth={_site.globalSeo.fallbackSeo.image.width}
+      twitterCard={_site.globalSeo.fallbackSeo.twittercard}
     >
       <Layout footer={footer}>
         <Contact contactPage={contactPage} />
@@ -20,8 +28,9 @@ export default function ContactPage({ contactPage, footer }: IContactPage) {
 export async function getStaticProps() {
   const { contactPage } = await getContactData();
   const { footer } = await getFooterData();
+  const { _site } = await getSeoData();
 
   return {
-    props: { contactPage, footer },
+    props: { contactPage, footer, _site },
   };
 }
