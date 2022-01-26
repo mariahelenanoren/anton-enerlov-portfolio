@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { Link as MuiLink } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
+import { checkIfCurrentPage } from '../../../../lib/helpers/checkIfCurrentPage';
 import { useStyles } from './styles';
 import { IDesktopMenu } from './types';
 

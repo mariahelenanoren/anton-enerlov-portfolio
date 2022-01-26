@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
 import { AppBar, Toolbar, Theme, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PaddingComponent } from '../paddingComponent';
+import { DesktopMenu, MobileMenu } from './menu';
 import { ISocialLinks } from './types';
 import { useStyles } from './styles';
-import { DesktopMenu, MobileMenu } from '../menu';
-import Link from 'next/link';
 
 export default function Header({ socialLinks }: ISocialLinks) {
   const [isOpen, setIsOpen] = useState<boolean>(false);

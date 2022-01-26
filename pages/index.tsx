@@ -1,9 +1,7 @@
-import { Landing, Grid, Page } from '../components';
-import { IFooter } from '../components/footer/types';
+import { Landing, PortfolioGrid, Page } from '../components';
 import { Layout } from '../layout/layout';
 import { getLandingData, getFooterData, getOutdoorPageData } from '../lib/gql';
-import { ILanding } from '../lib/gql/landing/types';
-import { IProject } from '../lib/gql/project/types';
+import { IProject, ILanding, IFooter } from '../lib/types';
 
 interface IOutdoorPage extends ILanding, IFooter {
   outdoorPage: {
@@ -23,7 +21,7 @@ export default function OutdoorPage({
     >
       <Layout footer={footer}>
         <Landing landing={landing} />
-        <Grid projects={outdoorPage.projects} />
+        <PortfolioGrid projects={outdoorPage.projects} />
       </Layout>
     </Page>
   );

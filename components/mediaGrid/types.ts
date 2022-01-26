@@ -1,9 +1,8 @@
-import { ResponsiveImageType } from 'react-datocms';
-import { IVideo } from '../../lib/types/video';
+import { IResponsiveImage, IVideo } from '../../lib/types';
 
 export interface IMediaGrid {
-  images: {
-    responsiveImage: ResponsiveImageType;
+  images: IResponsiveImage[];
+  videos: {
+    video: IVideo;
   }[];
-  videos: IVideo[];
 }

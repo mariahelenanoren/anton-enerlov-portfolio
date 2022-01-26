@@ -5,15 +5,10 @@ import { Image } from 'react-datocms';
 import { ProjectInfo } from '../projectInfo';
 import { MediaGrid } from '../mediaGrid';
 import { MoreIn } from '../moreIn';
-import { IProject } from '../../lib/gql/project/types';
 import { PreviewModal } from '../previewModal';
 import { AnimationContainer } from '../animationContainer';
 import { DisableCopy } from '../disableCopy';
-
-interface IProjectPage {
-  project: IProject;
-  allProjects: IProject[];
-}
+import { IProjectPage } from './types';
 
 export default function ProjectPage({ project, allProjects }: IProjectPage) {
   const classes = useStyles();

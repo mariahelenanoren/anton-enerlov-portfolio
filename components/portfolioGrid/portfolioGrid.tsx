@@ -8,7 +8,7 @@ import { PaddingComponent } from '../paddingComponent';
 import { useStyles } from './styles';
 import { IGrid } from './types';
 
-export default function Grid({ projects }: IGrid) {
+export default function PortfolioGrid({ projects }: IGrid) {
   const classes = useStyles();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));

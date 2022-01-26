@@ -1,4 +1,4 @@
-import { ISocialLinks } from '../../header/types';
+import { ISocialLinks } from '../../types';
 
 export interface IDesktopMenu {
   pages: {

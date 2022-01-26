@@ -5,7 +5,7 @@ import {
   SelectedClients,
   TextContainer,
 } from '../../components';
-import { IAbout } from '../../lib/gql/about/types';
+import { IAbout } from '../../lib/types';
 import { useStyles } from './styles';
 
 export default function About({ aboutPage }: IAbout) {

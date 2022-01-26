@@ -1,10 +1,9 @@
 import Contact from '../components/contact/contact';
 import { getContactData } from '../lib/gql/contact';
 import { getFooterData } from '../lib/gql';
-import { IContact } from '../lib/gql/contact/types';
 import { Layout } from '../layout/layout';
-import { IFooter } from '../components/footer/types';
 import { Page } from '../components';
+import { IContact, IFooter } from '../lib/types';
 
 interface IContactPage extends IFooter, IContact {}
 

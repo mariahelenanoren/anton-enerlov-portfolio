@@ -1,13 +1,11 @@
-import { Landing, Grid, Page } from '../components';
-import { IFooter } from '../components/footer/types';
+import { Landing, PortfolioGrid, Page } from '../components';
 import { Layout } from '../layout/layout';
 import {
   getFooterData,
   getLandingData,
   getLifestylePageData,
 } from '../lib/gql';
-import { ILanding } from '../lib/gql/landing';
-import { IProject } from '../lib/gql/project/types';
+import { IProject, ILanding, IFooter } from '../lib/types';
 
 interface ILifestylePage extends ILanding, IFooter {
   lifestylePage: {
@@ -27,7 +25,7 @@ export default function LifestylePage({
     >
       <Layout footer={footer}>
         <Landing landing={landing} />
-        <Grid projects={lifestylePage.projects} />
+        <PortfolioGrid projects={lifestylePage.projects} />
       </Layout>
     </Page>
   );

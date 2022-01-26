@@ -1,6 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { StructuredText } from 'react-datocms';
-import { IContact } from '../../lib/gql/contact/types';
+import { IContact } from '../../lib/types';
 import { PaddingComponent } from '../paddingComponent';
 import { TextContainer } from '../textContainer';
 import { useStyles } from './styles';

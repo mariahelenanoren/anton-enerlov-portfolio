@@ -1,5 +1,6 @@
-import { IVideo } from '../../lib/types/video';
+import { IVideo } from '../../lib/types';
 
-export interface IExternalVideo extends IVideo {
+export interface IExternalVideo {
+  video: IVideo;
   preventPlay: boolean;
 }

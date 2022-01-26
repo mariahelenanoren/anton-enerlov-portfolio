@@ -1,9 +1,8 @@
 import { Page } from '../components';
-import { IFooter } from '../components/footer/types';
 import { About } from '../layout/about';
 import { Layout } from '../layout/layout';
 import { getAboutPageData, getFooterData } from '../lib/gql';
-import { IAbout } from '../lib/gql/about/types';
+import { IFooter, IAbout } from '../lib/types';
 
 interface IAboutPage extends IAbout, IFooter {}
 

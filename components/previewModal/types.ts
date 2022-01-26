@@ -1,15 +1,6 @@
-import { ResponsiveImageType } from 'react-datocms';
+import { IVideo, IResponsiveImage } from '../../lib/types';
 
 export interface IPreviewModal {
-	image?: {
-		responsiveImage: ResponsiveImageType;
-	};
-	video?: {
-		height: number;
-		width: number;
-		provider: string;
-		providerUid: string;
-		thumbnailUrl: string;
-		url: string;
-	};
+  image?: IResponsiveImage;
+  video?: IVideo;
 }

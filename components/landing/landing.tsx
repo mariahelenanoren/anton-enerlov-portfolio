@@ -1,10 +1,9 @@
 import React from 'react';
-import { Grid, Link, Theme, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/styles';
+import { Grid, Link, Theme, Typography, useMediaQuery } from '@mui/material';
 import { Image } from 'react-datocms';
-
-import { ILanding } from '../../lib/gql/landing';
 import { PaddingComponent } from '../paddingComponent';
+import { ILanding } from '../../lib/types';
 import { useStyles } from './styles';
 
 export default function Landing({ landing }: ILanding) {

@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import { useStyles } from './styles';
 import { Image } from 'react-datocms';
 import { IMobileMenu } from './types';
-import { checkIfCurrentPage } from '../../../lib/helpers/checkIfCurrentPage';
-import { stopBodyScroll } from '../../../lib/helpers/stopBodyScroll';
+import { checkIfCurrentPage } from '../../../../lib/helpers/checkIfCurrentPage';
+import { stopBodyScroll } from '../../../../lib/helpers/stopBodyScroll';
 import Link from 'next/link';
 
 export default function MobileMenu({

@@ -11,7 +11,6 @@ import { ExternalVideo } from '../externalVideo';
 export default function MediaGrid({ images, videos }: IMediaGrid) {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));
-  console.log(videos);
 
   return (
     <PaddingComponent>
