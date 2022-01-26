@@ -1,5 +1,5 @@
 import { IProject } from '../../lib/types';
 
-export interface IGrid {
+export interface IPortfolioGrid {
   projects: IProject[];
 }

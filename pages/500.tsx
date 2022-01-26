@@ -1,5 +1,4 @@
-import { FiveOhOh } from '../layout/500';
-import { Layout } from '../layout/layout';
+import { Layout, FiveOhOh } from '../layout';
 import { getFooterData } from '../lib/gql';
 import { IFooter } from '../lib/types';
 

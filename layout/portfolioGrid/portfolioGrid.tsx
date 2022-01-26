@@ -6,9 +6,9 @@ import { transformToRoute } from '../../lib/helpers/transformRoute';
 import { AnimationContainer } from '../../components/animationContainer';
 import { PaddingComponent } from '../../components/paddingComponent';
 import { useStyles } from './styles';
-import { IGrid } from './types';
+import { IPortfolioGrid } from './types';
 
-export default function Grid({ projects }: IGrid) {
+export default function PortfolioGrid({ projects }: IPortfolioGrid) {
   const classes = useStyles();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));

@@ -1,5 +1,4 @@
-import { FourOhFour } from '../layout/404';
-import { Layout } from '../layout/layout';
+import { Layout, FourOhFour } from '../layout';
 import { getFooterData } from '../lib/gql';
 import { IFooter } from '../lib/types';
 

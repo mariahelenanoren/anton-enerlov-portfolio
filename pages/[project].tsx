@@ -5,15 +5,13 @@ import {
   getProjectData,
   getProjectsData,
 } from '../lib/gql';
-import { ProjectPage as Project } from '../layout/projectPage';
-import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
 import {
   transformFromRoute,
   transformToRoute,
 } from '../lib/helpers/transformRoute';
-import { Page } from '../layout/page';
 import { IFooter, IProject } from '../lib/types';
+import { Layout, Page, Project } from '../layout';
 
 interface IProjectPage extends IFooter {
   allProjects: IProject[];

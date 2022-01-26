@@ -1,6 +1,4 @@
-import { Page } from '../layout/page';
-import { About } from '../layout/about';
-import { Layout } from '../layout/layout';
+import { Page, Layout, About } from '../layout';
 import { getAboutPageData, getFooterData } from '../lib/gql';
 import { IFooter, IAbout } from '../lib/types';
 
