@@ -1,7 +1,5 @@
 export interface IClients {
-  clientTitle: string;
-  clientCategory: string;
-  clients: {
-    name: string;
-  }[];
+	clients: {
+		name: string;
+	}[];
 }
