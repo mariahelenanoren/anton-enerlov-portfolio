@@ -1,14 +1,18 @@
 import { Page, Layout, About } from '../layout';
-import { getAboutPageData, getFooterData } from '../lib/gql';
-import { IFooter, IAbout } from '../lib/types';
+import { getAboutPageData, getFooterData, getSeoData } from '../lib/gql';
+import { IFooter, IAbout, ISeo } from '../lib/types';
 
-interface IAboutPage extends IAbout, IFooter {}
+interface IAboutPage extends IAbout, IFooter, ISeo {}
 
-export default function AboutPage({ aboutPage, footer }: IAboutPage) {
+export default function AboutPage({ aboutPage, footer, _site }: IAboutPage) {
   return (
     <Page
       title="About"
-      description="Anton Enerlöv is an action and outdoor photographer based in Stockholm. "
+      description={_site.globalSeo.fallbackSeo.description}
+      imageUrl={_site.globalSeo.fallbackSeo.image.url}
+      imageHeight={_site.globalSeo.fallbackSeo.image.height}
+      imageWidth={_site.globalSeo.fallbackSeo.image.width}
+      twitterCard={_site.globalSeo.fallbackSeo.twittercard}
     >
       <Layout footer={footer}>
         <About aboutPage={aboutPage} />
@@ -20,8 +24,9 @@ export default function AboutPage({ aboutPage, footer }: IAboutPage) {
 export async function getStaticProps() {
   const { footer } = await getFooterData();
   const { aboutPage } = await getAboutPageData();
+  const { _site } = await getSeoData();
 
   return {
-    props: { footer, aboutPage },
+    props: { footer, aboutPage, _site },
   };
 }

@@ -1,19 +1,31 @@
-import { Layout, FourOhFour } from '../layout';
-import { getFooterData } from '../lib/gql';
-import { IFooter } from '../lib/types';
+import { Layout, FourOhFour, Page } from '../layout';
+import { getFooterData, getSeoData } from '../lib/gql';
+import { IFooter, ISeo } from '../lib/types';
 
-export default function Custom404({ footer }: IFooter) {
+interface I404 extends IFooter, ISeo {}
+
+export default function Custom404({ footer, _site }: I404) {
   return (
-    <Layout footer={footer}>
-      <FourOhFour />
-    </Layout>
+    <Page
+      title="404"
+      description="404 - Something went wrong"
+      imageUrl={_site.globalSeo.fallbackSeo.image.url}
+      imageHeight={_site.globalSeo.fallbackSeo.image.height}
+      imageWidth={_site.globalSeo.fallbackSeo.image.width}
+      twitterCard={_site.globalSeo.fallbackSeo.twittercard}
+    >
+      <Layout footer={footer}>
+        <FourOhFour />
+      </Layout>
+    </Page>
   );
 }
 
 export const getStaticProps = async () => {
   const { footer } = await getFooterData();
+  const { _site } = await getSeoData();
 
   return {
-    props: { footer },
+    props: { footer, _site },
   };
 };

@@ -8,6 +8,7 @@ import { IContact } from './IContact';
 import { ILanding } from './ILanding';
 import { IClients } from './IClients';
 import { IAbout } from './IAbout';
+import { ISeo } from './ISeo';
 
 export {
   type IProject,
@@ -20,4 +21,5 @@ export {
   type ILanding,
   type IClients,
   type IAbout,
+  type ISeo,
 };
