@@ -2,7 +2,6 @@ import { PaddingComponent } from './paddingComponent';
 import { TextContainer } from './textContainer';
 import { Header } from './header';
 import { Footer } from './footer';
-import { Grid } from '../layout/grid';
 import { SelectedClients } from './selectedClients';
 import { ProjectTextContainer } from './projectTextContainer';
 import { Loader } from './loader';
@@ -15,7 +14,6 @@ export {
 	PaddingComponent,
 	Header,
 	Footer,
-	Grid,
 	TextContainer,
 	SelectedClients,
 	ProjectTextContainer,

@@ -1,4 +1,4 @@
-import { Grid } from '../components';
+import { Grid } from '../layout/grid';
 import { IFooter } from '../components/footer/types';
 import { Landing } from '../layout/landing';
 import { Layout } from '../layout/layout';
