@@ -21,7 +21,7 @@ export default function SelectedClients({ clients }: IClients) {
 	return (
 		<div className={classes.selectedContainer}>
 			<Typography variant="h2" className={classes.title}>
-				{'Selected Clients'}
+				Selected Clients
 			</Typography>
 			<TextContainer>
 				<Grid direction={'row'} spacing={!isMobile ? 5 : 3} container>
