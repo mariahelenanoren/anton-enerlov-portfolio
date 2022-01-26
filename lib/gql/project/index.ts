@@ -1,4 +1,3 @@
+import { getProjectData } from './getProjectData';
 
-import { getProjectData } from "./getProjectData";
-
-export {getProjectData}
+export { getProjectData };

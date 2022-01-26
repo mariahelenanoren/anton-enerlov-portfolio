@@ -5,15 +5,15 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { ISelectedClients } from './types';
 import { useStyles } from './styles';
 import { TextContainer } from '../textContainer';
+import { IClients } from '../../lib/types';
 
 export default function SelectedClients({
   clientTitle,
   clientCategory,
   clients,
-}: ISelectedClients) {
+}: IClients) {
   const classes = useStyles();
   const theme: Theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.only('xs'));

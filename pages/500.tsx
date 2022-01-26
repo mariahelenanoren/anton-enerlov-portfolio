@@ -1,20 +1,19 @@
-import { IFooter } from '../components/footer/types';
-import { FiveOhOh } from '../layout/500';
-import { Layout } from '../layout/layout';
+import { Layout, FiveOhOh } from '../layout';
 import { getFooterData } from '../lib/gql';
+import { IFooter } from '../lib/types';
 
 export default function Custom500({ footer }: IFooter) {
-	return (
-		<Layout footer={footer}>
-			<FiveOhOh />
-		</Layout>
-	);
+  return (
+    <Layout footer={footer}>
+      <FiveOhOh />
+    </Layout>
+  );
 }
 
 export const getStaticProps = async () => {
-	const { footer } = await getFooterData();
+  const { footer } = await getFooterData();
 
-	return {
-		props: { footer },
-	};
+  return {
+    props: { footer },
+  };
 };

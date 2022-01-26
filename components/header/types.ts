@@ -1,10 +1,5 @@
-import { ResponsiveImageType } from 'react-datocms';
+import { ISocialLink } from '../../lib/types';
 
 export interface ISocialLinks {
-  socialLinks: {
-    link: string;
-    icon: {
-      responsiveImage: ResponsiveImageType;
-    };
-  }[];
+  socialLinks: ISocialLink[];
 }

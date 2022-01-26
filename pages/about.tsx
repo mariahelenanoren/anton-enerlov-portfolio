@@ -1,30 +1,27 @@
-import { Page } from '../layout/page';
-import { IFooter } from '../components/footer/types';
-import { About } from '../layout/about';
-import { Layout } from '../layout/layout';
+import { Page, Layout, About } from '../layout';
 import { getAboutPageData, getFooterData } from '../lib/gql';
-import { IAbout } from '../lib/gql/about/types';
+import { IFooter, IAbout } from '../lib/types';
 
 interface IAboutPage extends IAbout, IFooter {}
 
 export default function AboutPage({ aboutPage, footer }: IAboutPage) {
-	return (
-		<Page
-			title="About"
-			description="Anton Enerlöv is an action and outdoor photographer based in Stockholm. "
-		>
-			<Layout footer={footer}>
-				<About aboutPage={aboutPage} />
-			</Layout>
-		</Page>
-	);
+  return (
+    <Page
+      title="About"
+      description="Anton Enerlöv is an action and outdoor photographer based in Stockholm. "
+    >
+      <Layout footer={footer}>
+        <About aboutPage={aboutPage} />
+      </Layout>
+    </Page>
+  );
 }
 
 export async function getStaticProps() {
-	const { footer } = await getFooterData();
-	const { aboutPage } = await getAboutPageData();
+  const { footer } = await getFooterData();
+  const { aboutPage } = await getAboutPageData();
 
-	return {
-		props: { footer, aboutPage },
-	};
+  return {
+    props: { footer, aboutPage },
+  };
 }

@@ -1,20 +1,19 @@
-import { IFooter } from '../components/footer/types';
-import { FourOhFour } from '../layout/404';
-import { Layout } from '../layout/layout';
+import { Layout, FourOhFour } from '../layout';
 import { getFooterData } from '../lib/gql';
+import { IFooter } from '../lib/types';
 
 export default function Custom404({ footer }: IFooter) {
-	return (
-		<Layout footer={footer}>
-			<FourOhFour />
-		</Layout>
-	);
+  return (
+    <Layout footer={footer}>
+      <FourOhFour />
+    </Layout>
+  );
 }
 
 export const getStaticProps = async () => {
-	const { footer } = await getFooterData();
+  const { footer } = await getFooterData();
 
-	return {
-		props: { footer },
-	};
+  return {
+    props: { footer },
+  };
 };

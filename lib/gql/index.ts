@@ -5,6 +5,7 @@ import { getAboutPageData } from './about';
 import { getProjectData } from './project';
 import { getLifestylePageData } from './lifestyle';
 import { getOutdoorPageData } from './outdoor';
+import { getContactData } from './contact';
 
 export {
   getLandingData,
@@ -14,4 +15,5 @@ export {
   getProjectData,
   getLifestylePageData,
   getOutdoorPageData,
+  getContactData,
 };

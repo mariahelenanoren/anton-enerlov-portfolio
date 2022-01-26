@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Image } from 'react-datocms';
 import { PaddingComponent } from '..';
-import { IProject } from '../../lib/gql/project/types';
 import { transformToRoute } from '../../lib/helpers/transformRoute';
+import { IProject } from '../../lib/types';
 import { useStyles } from './styles';
 
 interface IMoreIn {

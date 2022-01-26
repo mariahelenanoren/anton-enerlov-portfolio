@@ -1,10 +1,10 @@
-import { Box, Link, Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Image as DatoImage } from 'react-datocms';
 import { PaddingComponent } from '..';
 import { useStyles } from './styles';
-import { IFooter } from './types';
 import Image from 'next/image';
+import { IFooter } from '../../lib/types';
 
 export default function Footer({ footer }: IFooter) {
   const classes = useStyles();

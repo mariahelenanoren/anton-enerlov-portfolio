@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { Footer, Header } from '../../components';
-import { IFooter } from '../../components/footer/types';
+import { IFooter } from '../../lib/types';
 import { useStyles } from './styles';
 
 export default function Layout({
