@@ -3,7 +3,6 @@ import {
   getLifestylePageData,
   getOutdoorPageData,
   getProjectData,
-  getProjectsData,
 } from '../lib/gql';
 import { GetStaticPropsContext } from 'next';
 import {
@@ -29,9 +28,7 @@ export default function ProjectPage({
       description={`${project.title} in ${project.categoryTitle}.`}
     >
       <Layout footer={footer}>
-        {project ? (
-          <Project allProjects={allProjects} project={project} />
-        ) : null}
+        <Project allProjects={allProjects} project={project} />
       </Layout>
     </Page>
   );
