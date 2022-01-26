@@ -1,5 +1,7 @@
-import { Landing, PortfolioGrid, Page } from '../components';
+import { Grid } from '../layout/grid';
+import { Landing } from '../layout/landing';
 import { Layout } from '../layout/layout';
+import { Page } from '../layout/page';
 import {
   getFooterData,
   getLandingData,
@@ -25,7 +27,7 @@ export default function LifestylePage({
     >
       <Layout footer={footer}>
         <Landing landing={landing} />
-        <PortfolioGrid projects={lifestylePage.projects} />
+        <Grid projects={lifestylePage.projects} />
       </Layout>
     </Page>
   );

@@ -3,12 +3,12 @@ import { Typography, useMediaQuery, useTheme } from '@mui/material';
 import Link from 'next/link';
 import { Image } from 'react-datocms';
 import { transformToRoute } from '../../lib/helpers/transformRoute';
-import { AnimationContainer } from '../animationContainer';
-import { PaddingComponent } from '../paddingComponent';
+import { AnimationContainer } from '../../components/animationContainer';
+import { PaddingComponent } from '../../components/paddingComponent';
 import { useStyles } from './styles';
 import { IGrid } from './types';
 
-export default function PortfolioGrid({ projects }: IGrid) {
+export default function Grid({ projects }: IGrid) {
   const classes = useStyles();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.only('xs'));

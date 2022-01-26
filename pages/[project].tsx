@@ -3,15 +3,16 @@ import {
   getLifestylePageData,
   getOutdoorPageData,
   getProjectData,
+  getProjectsData,
 } from '../lib/gql';
-import { ProjectPage as Project } from '../components/projectPage';
+import { ProjectPage as Project } from '../layout/projectPage';
 import { Layout } from '../layout/layout';
 import { GetStaticPropsContext } from 'next';
 import {
   transformFromRoute,
   transformToRoute,
 } from '../lib/helpers/transformRoute';
-import { Page } from '../components';
+import { Page } from '../layout/page';
 import { IFooter, IProject } from '../lib/types';
 
 interface IProjectPage extends IFooter {

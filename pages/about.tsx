@@ -1,4 +1,4 @@
-import { Page } from '../components';
+import { Page } from '../layout/page';
 import { About } from '../layout/about';
 import { Layout } from '../layout/layout';
 import { getAboutPageData, getFooterData } from '../lib/gql';
