@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   logoContainer: {
     zIndex: 10,
     position: 'relative',
+    cursor: 'pointer',
     width: '3rem',
     height: '2rem',
     [theme.breakpoints.only('xs')]: {
