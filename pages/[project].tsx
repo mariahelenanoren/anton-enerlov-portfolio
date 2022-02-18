@@ -2,7 +2,6 @@ import {
   getFooterData,
   getLifestylePageData,
   getOutdoorPageData,
-  getProjectData,
   getSeoData,
 } from '../lib/gql';
 import { GetStaticPropsContext } from 'next';
@@ -14,14 +13,14 @@ import { IFooter, IProject, ISeo } from '../lib/types';
 import { Layout, Page, Project } from '../layout';
 
 interface IProjectPage extends IFooter, ISeo {
-  allProjects: IProject[];
+  projectsByCategory: IProject[];
   project: IProject;
 }
 
 export default function ProjectPage({
   project,
   footer,
-  allProjects,
+  projectsByCategory,
   _site,
 }: IProjectPage) {
   return (
@@ -43,7 +42,7 @@ export default function ProjectPage({
       twitterCard={_site.globalSeo.fallbackSeo.twittercard}
     >
       <Layout footer={footer}>
-        <Project allProjects={allProjects} project={project} />
+        <Project allProjects={projectsByCategory} project={project} />
       </Layout>
     </Page>
   );
@@ -54,21 +53,29 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const projectTitle = transformFromRoute(
     (context.params?.project as string) || ''
   );
-  const filteredProjects = await getProjectData(projectTitle);
-  const project: IProject = filteredProjects.allProjects[0];
   const { _site } = await getSeoData();
 
-  let allProjects;
+  const { outdoorPage } = await getOutdoorPageData();
+  const { lifestylePage } = await getLifestylePageData();
+  const outdoorProjects = outdoorPage.projects;
+  const lifestyleProjects = lifestylePage.projects;
+
+  let allProjects: IProject[] = [...outdoorProjects, ...lifestyleProjects];
+
+  const project = allProjects.filter(
+    (project) => project.title.toLowerCase() === projectTitle
+  )[0];
+
+  let projectsByCategory = [];
+
   if (project.categoryTitle.toLowerCase() === 'outdoor') {
-    const { outdoorPage } = await getOutdoorPageData();
-    allProjects = outdoorPage.projects;
+    projectsByCategory = outdoorProjects;
   } else {
-    const { lifestylePage } = await getLifestylePageData();
-    allProjects = lifestylePage.projects;
+    projectsByCategory = lifestyleProjects;
   }
 
   return {
-    props: { footer, project, allProjects, _site },
+    props: { footer, project, projectsByCategory, _site },
   };
 }
 

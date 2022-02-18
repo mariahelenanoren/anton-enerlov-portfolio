@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useTheme } from '@mui/styles';
-import { AppBar, Toolbar, Theme, useMediaQuery } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Theme,
+  useMediaQuery,
+  Link as MuiLink,
+} from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PaddingComponent } from '../paddingComponent';
@@ -44,12 +50,14 @@ export default function Header({ socialLinks }: ISocialLinks) {
         <Toolbar className={classes.toolbar}>
           <div className={classes.logoContainer}>
             <Link href="/" passHref>
-              <Image
-                layout="fill"
-                objectFit="contain"
-                alt="logotype"
-                src="/assets/logo-cropped.png"
-              ></Image>
+              <MuiLink>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  alt="logotype"
+                  src="/assets/logo-cropped.png"
+                ></Image>
+              </MuiLink>
             </Link>
           </div>
           <div>
