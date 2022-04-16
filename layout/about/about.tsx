@@ -1,10 +1,6 @@
 import { Typography } from '@mui/material';
 import { StructuredText } from 'react-datocms';
-import {
-	PaddingComponent,
-	SelectedClients,
-	TextContainer,
-} from '../../components';
+import { PaddingComponent, SelectedClients } from '../../components';
 import { IAbout } from '../../lib/types';
 import { useStyles } from './styles';
 
@@ -17,9 +13,9 @@ export default function About({ aboutPage }: IAbout) {
 				<Typography className={classes.aboutTitle} variant="h1">
 					{aboutPage.title}
 				</Typography>
-				<TextContainer>
+				<div className={classes.textContainer}>
 					<StructuredText data={aboutPage.body.value} />
-				</TextContainer>
+				</div>
 				<div className={classes.videoContainer}>
 					<iframe
 						className={classes.video}
