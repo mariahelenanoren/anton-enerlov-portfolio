@@ -18,7 +18,9 @@ export default function About({ aboutPage }: IAbout) {
 					{aboutPage.title}
 				</Typography>
 				<TextContainer>
-					<StructuredText data={aboutPage.body.value} />
+					<div className={classes.aboutText}>
+						<StructuredText data={aboutPage.body.value} />
+					</div>
 				</TextContainer>
 				<div className={classes.videoContainer}>
 					<iframe
