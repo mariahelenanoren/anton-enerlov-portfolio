@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		maxWidth: '45rem',
 		marginRight: 'auto',
 		marginLeft: 'auto',
-		textAlign: 'left',
+		textAlign: 'center',
 		'& p': {
 			margin: 0,
 			fontSize: 18,
@@ -23,6 +23,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
 				fontSize: 16,
 			},
 		},
+	},
+	aboutText: {
+		textAlign: 'left',
 	},
 
 	aboutTitle: {
